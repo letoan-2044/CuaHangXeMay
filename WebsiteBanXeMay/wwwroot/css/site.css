@@ -1,0 +1,65 @@
+/* 🔥 NAVBAR MÀU XANH */
+#mainNavbar {
+    background: linear-gradient(135deg, #0d6efd 0%, #1e3c72 100%) !important;
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 85px;
+    top: 0;
+    z-index: 1060;
+    position: fixed;
+    width: 100%;
+}
+
+    /* 🔥 USER INFO SHRINK - ĐÚNG SELECTOR */
+    #mainNavbar.scroll-shrinked .user-avatar {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+        #mainNavbar.scroll-shrinked .user-avatar i {
+            font-size: 1.1rem !important;
+        }
+
+    #mainNavbar.scroll-shrinked .user-info {
+        max-width: 100px !important;
+        font-size: 0.9rem !important;
+        opacity: 0.9 !important;
+    }
+
+    #mainNavbar.scroll-shrinked .dropdown-toggle {
+        padding: 8px 12px !important;
+    }
+
+        /* 🔥 HOVER MỞ RỘNG */
+        #mainNavbar.scroll-shrinked .dropdown-toggle:hover .user-info {
+            max-width: 140px !important;
+            opacity: 1 !important;
+        }
+
+/* 🔥 ROOT VARIABLES - CẬP NHẬT MÀU XANH */
+:root {
+    --primary: linear-gradient(135deg, #0d6efd 0%, #1e3c72 100%);
+    --warning: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    --danger: linear-gradient(135deg, #dc3545 0%, #ff6b7a 100%);
+    --info: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.25);
+    --shadow-xl: 0 25px 80px rgba(0,0,0,0.3);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.2);
+}
+/* 🔥 TĂNG KHOẢNG CÁCH NAVBAR - CONTENT */
+main {
+    padding-top: 5rem !important; /* ← TĂNG TỪ 5rem → 8rem */
+    padding-bottom: 5rem !important;
+}
+
+#mainNavbar.scroll-shrinked {
+    height: 70px !important; /* ← Navbar co lại nhỏ hơn */
+    padding: 0.5rem 0 !important;
+}
+
+.slider-container {
+    margin-top: 2rem !important; /* ← Slider cách navbar xa hơn */
+    margin-bottom: 4rem !important;
+}

@@ -1,0 +1,209 @@
+﻿/* ============================================
+   DANG KY FORM STYLES
+============================================ */
+
+/* Container */
+.dangki-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Card */
+.dangki-card {
+    max-width: 500px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+    .dangki-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+    }
+
+/* Header */
+.dangki-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.dangki-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dangki-subtitle {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* Body */
+.dangki-body {
+    padding: 2.5rem;
+}
+
+/* Form Floating */
+.form-floating > label {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.form-floating > .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+}
+
+    .form-floating > .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.15);
+        background: white;
+    }
+
+    .form-floating > .form-control.is-valid {
+        border-color: #28a745;
+        background: #f8fff9;
+    }
+
+    .form-floating > .form-control.is-invalid {
+        border-color: #dc3545;
+        background: #fff5f5;
+    }
+
+/* Toggle Password Button */
+.btn-toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    padding: 0.25rem;
+    z-index: 5;
+    transition: color 0.3s ease;
+}
+
+    .btn-toggle-password:hover {
+        color: #667eea;
+    }
+
+/* Buttons */
+.btn-dangki-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+    .btn-dangki-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        color: white;
+    }
+
+.btn-dangki-secondary {
+    background: transparent;
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .btn-dangki-secondary:hover {
+        background: #667eea;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    }
+
+/* Footer */
+.dangki-footer {
+    padding: 1.5rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+}
+
+    .dangki-footer a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .dangki-footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Responsive */
+@media (max-width: 576px) {
+    .dangki-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .dangki-body {
+        padding: 1.5rem;
+    }
+
+    .dangki-header {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Alert */
+.alert {
+    border-radius: 12px;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dangki-card {
+    animation: fadeInUp 0.6s ease-out;
+}

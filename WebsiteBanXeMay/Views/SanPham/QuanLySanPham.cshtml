@@ -1,0 +1,138 @@
+﻿@model IEnumerable<WebsiteBanXeMay.Models.SanPham>
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <!-- 🔥 HEADER -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 fw-bold text-primary mb-0">
+                    <i class="fas fa-boxes-stacked me-2"></i>
+                    Quản lý sản phẩm (@Model.Count())
+                </h2>
+                <a asp-action="ThemSanPham" asp-controller="SanPham" class="btn btn-success btn-lg shadow-sm">
+                    <i class="fas fa-plus me-2"></i>Thêm sản phẩm mới
+                </a>
+            </div>
+
+            <!-- 🔥 ALERTS -->
+            @if (TempData["success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>@TempData["success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            @if (TempData["error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>@TempData["error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <!-- 🔥 TABLE SẢN PHẨM -->
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th style="width: 70px">Ảnh</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Danh mục</th>
+                                    <th style="width: 120px">Giá</th>
+                                    <th style="width: 100px">Tồn kho</th>
+                                    <th style="width: 100px">Trạng thái</th>
+                                    <th style="width: 200px">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        
+                                        <td>
+                                            <img src="@Url.Content(string.IsNullOrEmpty(item.HinhAnh) ? "~/images/no-image.png" : $"~/images/{item.HinhAnh}")"
+                                                 class="rounded shadow-sm img-fluid w-100"
+                                                 style="width:60px;height:40px;object-fit:cover;border:1px solid #dee2e6;"
+                                                 alt="@item.TenSanPham"
+                                                 onerror="this.src='@Url.Content("~/images/no-image.png")'" />
+                                        </td>
+
+                                        <!-- Tên sản phẩm -->
+                                        <td>
+                                            <strong class="d-block text-dark">@item.TenSanPham</strong>
+                                            @if (!string.IsNullOrEmpty(item.MoTa))
+                                            {
+                                                <small class="text-muted">@item.MoTa.Substring(0, Math.Min(60, item.MoTa.Length))@(item.MoTa.Length > 60 ? "..." : "")</small>
+                                            }
+                                        </td>
+
+                                        <!-- Danh mục -->
+                                        <td>
+                                            <span class="badge bg-info text-dark px-2 py-1">@item.DanhMuc?.TenDanhMuc</span>
+                                        </td>
+
+                                        <!-- Giá -->
+                                        <td class="text-end">
+                                            <!-- Giá GỐC -->
+                                            <div class="text-muted text-decoration-line-through small mb-1">
+                                                @(((decimal)item.Gia * 1.1m).ToString("N0")) ₫
+                                            </div>
+                                            <!-- Giá KM -->
+                                            <div class="mb-1">
+                                                <strong class="text-danger h5 me-1">@item.Gia.ToString("N0")</strong>
+                                                <span class="text-danger">₫</span>
+                                            </div>
+                                            <!-- Badge -->
+                                            <span class="badge bg-success">Giảm 10%</span>
+                                        </td>
+
+                                        <!-- Tồn kho -->
+                                        <td>
+                                            <span class="badge @(item.SoLuongTon > 20 ? "bg-success" : item.SoLuongTon > 5 ? "bg-warning" : "bg-danger") px-2 py-1">
+                                                @item.SoLuongTon
+                                            </span>
+                                        </td>
+
+                                        <!-- Trạng thái -->
+                                        <td>
+                                            <span class="badge @(item.TrangThai ? "bg-success" : "bg-warning text-dark") px-2 py-1">
+                                                @(item.TrangThai ? "Hoạt động" : "Ẩn")
+                                            </span>
+                                        </td>
+
+                                        <!-- Thao tác -->
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group">
+                                                <a asp-action="Details" asp-route-id="@item.MaSanPham"
+                                                   class="btn btn-outline-primary btn-sm" title="Xem">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <!-- 🔥 DÒNG 1: ĐỔI "ChinhSuaSanPham" → "ThemSanPham" -->
+                                                <a asp-action="ThemSanPham" asp-controller="SanPham" asp-route-id="@item.MaSanPham"
+                                                   class="btn btn-outline-warning btn-sm" title="Sửa">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <!-- 🔥 DÒNG 2: THÊM "asp-controller="QuanLySanPham"" -->
+                                                <a asp-action="XoaSanPham" asp-controller="SanPham" asp-route-id="@item.MaSanPham"
+                                                   class="btn btn-outline-danger btn-sm" title="Xóa"
+                                                   onclick="return confirm('Xóa @item.TenSanPham?')">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

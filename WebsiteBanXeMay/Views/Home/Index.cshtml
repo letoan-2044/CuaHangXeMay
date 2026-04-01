@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<!-- SLIDER 5 ẢNH -->
+<div class="slider-container position-relative pb-5">
+    <div id="homeCarousel" class="carousel slide mt-2" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/images/imgHome1.jpg" class="d-block w-100 banner-slide" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/imgHome4.png" class="d-block w-100 banner-slide" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/imgHome2.jpg" class="d-block w-100 banner-slide" alt="Banner 3">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/imgHome5.png" class="d-block w-100 banner-slide" alt="Banner 4">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/imgHome3.jpg" class="d-block w-100 banner-slide" alt="Banner 5">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4"></button>
+        </div>
+    </div>
+</div>
+
+<!-- GIỚI THIỆU CỬA HÀNG -->
+<div class="container text-center mt-4">
+    <h1 class="fw-bold text-danger mb-3">Cửa hàng xe máy</h1>
+    <p class="lead mb-2">Chuyên cung cấp các dòng xe máy chất lượng cao, thiết kế hiện đại, tiết kiệm nhiên liệu.</p>
+    <p class="mb-3">Chúng tôi mang đến trải nghiệm mua sắm nhanh chóng, tiện lợi và đáng tin cậy.</p>
+</div>

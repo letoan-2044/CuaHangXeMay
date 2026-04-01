@@ -1,0 +1,94 @@
+﻿@model List<WebsiteBanXeMay.Models.SanPham>
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+
+<div class="container-fluid py-5 bg-light min-vh-100">
+    <!-- Header -->
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold mb-2">
+                <i class="fas fa-motorcycle text-primary me-3"></i>DANH SÁCH XE MÁY
+            </h1>
+            @if (ViewBag.IsLoggedIn == true)
+            {
+                <p class="lead text-success">Xin chào @ViewBag.HoTen (@ViewBag.ChucVu)</p>
+            }
+        </div>
+    </div>
+
+    <!-- 🔥 PRODUCTS - FIX URL ABSOLUTE -->
+    <div class="row g-4">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-lg border-0 hover-lift">
+                        <!-- 🔥 ẢNH - ABSOLUTE URL + DEBUG -->
+                        <img src="/images/@item.HinhAnh"
+                             class="card-img-top"
+                             alt="@item.TenSanPham"
+                             style="height: 240px; object-fit: cover;"
+                             loading="lazy"
+                             onerror="console.log('Index failed: /images/@item.HinhAnh'); this.src='/images/no-image.png';" />
+
+                        <div class="card-body p-4 d-flex flex-column">
+                            @if (item.DanhMuc != null)
+                            {
+                                <span class="badge bg-info mb-3">@item.DanhMuc.TenDanhMuc</span>
+                            }
+                            <h5 class="card-title fw-bold mb-3">@item.TenSanPham</h5>
+                            <div class="h3 text-danger fw-bold mb-4">@item.Gia.ToString("N0")₫</div>
+
+                            <div class="mt-auto">
+                                <a asp-action="Details" asp-route-id="@item.MaSanPham"
+                                   class="btn btn-primary w-100 mb-2">
+                                    <i class="fas fa-eye me-2"></i>Xem chi tiết
+                                </a>
+                                @if (ViewBag.IsLoggedIn == true)
+                                {
+                                    <form asp-action="AddToCart" method="post" style="display:inline-block;width:100%;">
+                                        <input type="hidden" name="maSanPham" value="@item.MaSanPham" />
+                                        <button type="submit" class="btn btn-success w-100">
+                                            <i class="fas fa-cart-plus me-2"></i>Giỏ hàng
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <h3>Chưa có sản phẩm</h3>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+            .hover-lift:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+}

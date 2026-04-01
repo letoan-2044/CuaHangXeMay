@@ -1,0 +1,218 @@
+﻿/* Import Animate.css cho hiệu ứng */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* Container chính */
+.dangnhap-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+    .dangnhap-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        pointer-events: none;
+    }
+
+/* Card chính */
+.dangnhap-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .dangnhap-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+    }
+
+/* Header */
+.dangnhap-header {
+    text-align: center;
+    padding: 2.5rem 2rem 1.5rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    backdrop-filter: blur(10px);
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.dangnhap-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+/* Body */
+.dangnhap-body {
+    padding: 2rem;
+}
+
+/* Form styling */
+.form-floating > .form-control {
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+    .form-floating > .form-control:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+        background: white;
+    }
+
+.form-floating > label {
+    color: #6b7280;
+    font-weight: 500;
+    padding-left: 1.25rem;
+}
+
+/* Toggle Password Button */
+.btn-toggle-password {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    z-index: 5;
+    transition: all 0.3s ease;
+    padding: 0.25rem;
+}
+
+    .btn-toggle-password:hover {
+        color: #4f46e5;
+        transform: scale(1.1);
+    }
+
+/* Buttons */
+.btn-dangnhap-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 56px;
+    letter-spacing: 0.025em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+    .btn-dangnhap-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-dangnhap-primary:active {
+        transform: translateY(0);
+    }
+
+/* Loading state */
+.btn-loading {
+    opacity: 0.9;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Divider */
+.divider-with-text {
+    position: relative;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+    .divider-with-text::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+    }
+
+/* Footer */
+.dangnhap-footer {
+    padding: 1.5rem 2rem;
+    background: #f9fafb;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .dangnhap-container {
+        padding: 10px;
+    }
+
+    .dangnhap-card {
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    .dangnhap-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .dangnhap-card {
+        background: rgba(31, 41, 55, 0.95);
+        color: #f9fafb;
+    }
+
+    .form-floating > .form-control {
+        background: rgba(55, 65, 81, 0.8);
+        border-color: #4b5563;
+        color: #f9fafb;
+    }
+}

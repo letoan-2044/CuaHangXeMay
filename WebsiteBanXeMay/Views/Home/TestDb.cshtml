@@ -1,0 +1,52 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Test Database";
+    var results = ViewBag.TestResult as Dictionary<string, string>;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3><i class="fas fa-database me-2"></i>KIỂM TRA DATABASE</h3>
+                    <h5 class="mt-2">@ViewBag.Status</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        @if (results != null)
+                        {
+                            @foreach (var item in results)
+                            {
+                                <div class="col-md-6">
+                                    <div class="card @(item.Value.Contains("OK") || item.Value.Contains("🟢") ? "border-success bg-light-success" : "border-danger bg-light-danger")">
+                                        <div class="card-body">
+                                            <h6 class="fw-bold">@item.Key</h6>
+                                            <p class="mb-0 fs-6">@item.Value</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <a href="/" class="btn btn-success btn-lg me-3">
+                            <i class="fas fa-home"></i> Trang chủ
+                        </a>
+                        <a asp-controller="TaiKhoan" asp-action="DangNhap" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-sign-in-alt"></i> Test Login
+                        </a>
+                        <a asp-controller="TaiKhoan" asp-action="ResetPassword" class="btn btn-warning btn-lg">
+                            <i class="fas fa-key"></i> Reset Admin Pass
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+}
