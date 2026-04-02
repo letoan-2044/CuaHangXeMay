@@ -231,5 +231,146 @@ namespace WebsiteBanXeMay.Controllers
                 return Json(0);
             }
         }
+        // 🔥 THÊM VÀO CUỐI TaiKhoanController (trước SetUserInfo nếu có)
+
+        // ----------------- ĐỔI MẬT KHẨU -----------------
+        [HttpGet]
+        public IActionResult DoiMatKhau()
+        {
+            _logger.LogInformation("🔑 GET /DoiMatKhau - Truy cập trang đổi mật khẩu");
+
+            // Kiểm tra đăng nhập
+            var maTaiKhoan = HttpContext.Session.GetInt32("MaTaiKhoan");
+            if (maTaiKhoan == null || maTaiKhoan == 0)
+            {
+                TempData["error"] = "❌ Vui lòng đăng nhập để đổi mật khẩu!";
+                return RedirectToAction("DangNhap");
+            }
+
+            return View(new DoiMatKhauViewModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DoiMatKhau(DoiMatKhauViewModel model)
+        {
+            var stopwatch = Stopwatch.StartNew();
+            _logger.LogInformation("🔐 POST /DoiMatKhau - Bắt đầu đổi mật khẩu");
+
+            try
+            {
+                var maTaiKhoan = HttpContext.Session.GetInt32("MaTaiKhoan");
+
+                if (maTaiKhoan == null || maTaiKhoan == 0)
+                {
+                    _logger.LogWarning("❌ Không tìm thấy session MaTaiKhoan");
+                    TempData["error"] = "❌ Phiên đăng nhập hết hạn!";
+                    return RedirectToAction("DangNhap");
+                }
+
+                // ✅ VALIDATE MODEL
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning("❌ ModelState invalid đổi mật khẩu");
+                    return View(model);
+                }
+
+                // Trim dữ liệu
+                model.MatKhauCu = model.MatKhauCu?.Trim();
+                model.MatKhauMoi = model.MatKhauMoi?.Trim();
+                model.XacNhanMatKhau = model.XacNhanMatKhau?.Trim();
+
+                // 🔥 KIỂM TRA MẬT KHẨU CŨ
+                var hashedMatKhauCu = HashPassword(model.MatKhauCu);
+                var user = await _context.TaiKhoans
+                    .FirstOrDefaultAsync(t => t.MaTaiKhoan == maTaiKhoan &&
+                                            t.MatKhau == hashedMatKhauCu &&
+                                            t.TrangThai == true);
+
+                if (user == null)
+                {
+                    _logger.LogWarning("❌ Mật khẩu cũ sai - MaTaiKhoan: {MaTaiKhoan}", maTaiKhoan);
+                    ModelState.AddModelError("MatKhauCu", "❌ Mật khẩu cũ không đúng!");
+                    return View(model);
+                }
+
+                // 🔥 KIỂM TRA MẬT KHẨU MỚI KHÔNG GIỐNG CŨ
+                if (hashedMatKhauCu == HashPassword(model.MatKhauMoi))
+                {
+                    _logger.LogWarning("⚠️ Mật khẩu mới giống mật khẩu cũ - MaTaiKhoan: {MaTaiKhoan}", maTaiKhoan);
+                    ModelState.AddModelError("MatKhauMoi", "❌ Mật khẩu mới không được giống mật khẩu cũ!");
+                    return View(model);
+                }
+
+                // 🔥 KIỂM TRA XÁC NHẬN MẬT KHẨU
+                if (model.MatKhauMoi != model.XacNhanMatKhau)
+                {
+                    _logger.LogWarning("❌ Xác nhận mật khẩu không khớp");
+                    ModelState.AddModelError("XacNhanMatKhau", "❌ Mật khẩu xác nhận không khớp!");
+                    return View(model);
+                }
+
+                // ✅ CẬP NHẬT MẬT KHẨU MỚI
+                var hashedMatKhauMoi = HashPassword(model.MatKhauMoi);
+                user.MatKhau = hashedMatKhauMoi;
+
+                var rows = await _context.SaveChangesAsync();
+
+                stopwatch.Stop();
+                _logger.LogInformation("✅ ĐỔI MẬT KHẨU THÀNH CÔNG - MaTaiKhoan: {MaTaiKhoan}, Thời gian: {ElapsedMs}ms",
+                    maTaiKhoan, stopwatch.ElapsedMilliseconds);
+
+                // 🔥 THÔNG BÁO + TRỞ VỀ TRANG ĐỔI MẬT KHẨU (KHÔNG REDIRECT)
+                TempData["success"] = "Đổi mật khẩu thành công!";
+
+                // 🔥 QUAN TRỌNG: Trở về chính trang DoiMatKhau để JS chạy
+                return RedirectToAction("DoiMatKhau");
+            }
+            catch (Exception ex)
+            {
+                stopwatch.Stop();
+                _logger.LogError(ex, "💥 LỖI đổi mật khẩu - MaTaiKhoan: {MaTaiKhoan}, Thời gian: {ElapsedMs}ms",
+                    HttpContext.Session.GetInt32("MaTaiKhoan"), stopwatch.ElapsedMilliseconds);
+                ModelState.AddModelError("", "❌ Có lỗi xảy ra, vui lòng thử lại!");
+                return View(model);
+            }
+        }
+        // 🔥 GIỎ HÀNG 
+        [HttpGet]
+        public async Task<IActionResult> GioHang()
+        {
+            _logger.LogInformation("🛒 GioHang - UserID: {MaTaiKhoan}", HttpContext.Session.GetInt32("MaTaiKhoan"));
+
+            var maTaiKhoan = HttpContext.Session.GetInt32("MaTaiKhoan");
+            if (maTaiKhoan == null || maTaiKhoan == 0)
+            {
+                _logger.LogWarning("❌ Chưa đăng nhập");
+                TempData["Loi"] = "Vui lòng đăng nhập để xem giỏ hàng!";
+                return RedirectToAction("DangNhap");
+            }
+
+            try
+            {
+                
+                var chiTietGioHang = await _context.ChiTietGioHangs
+                    .Include(ct => ct.SanPham)
+                    .Include(ct => ct.GioHang)  
+                    .Where(ct => ct.GioHang.MaTaiKhoan == maTaiKhoan.Value)
+                    .ToListAsync();
+
+                ViewBag.TongTien = chiTietGioHang.Sum(ct => ct.SoLuong * ct.SanPham.Gia);
+                ViewBag.SoLuongSanPham = chiTietGioHang.Sum(ct => ct.SoLuong);
+                ViewBag.DebugUserId = maTaiKhoan;
+                ViewBag.DebugCount = chiTietGioHang.Count;
+
+                _logger.LogInformation("✅ GioHang OK - User: {0}, SP: {1}", maTaiKhoan, chiTietGioHang.Count);
+                return View("~/Views/GioHang/Index.cshtml", chiTietGioHang);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "💥 Lỗi GioHang");
+                return View(new List<ChiTietGioHang>());
+            }
+        }
     }
 }

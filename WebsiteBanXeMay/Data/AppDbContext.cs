@@ -7,10 +7,17 @@ namespace WebsiteBanXeMay.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        // 🔥 EXISTING TABLES
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
         public DbSet<ChucVu> ChucVus { get; set; }
         public DbSet<DanhMuc> DanhMucs { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }
+        public DbSet<GioHang> GioHangs { get; set; }
+        public DbSet<ChiTietGioHang> ChiTietGioHangs { get; set; }
+
+        // 🔥 NEW TABLES - DONHANG
+        public DbSet<DonHang> DonHangs { get; set; }
+        public DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,16 +28,22 @@ namespace WebsiteBanXeMay.Data
             modelBuilder.Entity<ChucVu>().ToTable("ChucVu");
             modelBuilder.Entity<DanhMuc>().ToTable("DanhMuc");
             modelBuilder.Entity<SanPham>().ToTable("SanPham");
+            modelBuilder.Entity<GioHang>().ToTable("GioHang");
+            modelBuilder.Entity<ChiTietGioHang>().ToTable("ChiTietGioHang");
 
-            // 🔥 FK SanPham -> DanhMuc (FIX LỖI 'DanhMucMaDanhMuc')
+            // 🔥 NEW TABLE NAMES
+            modelBuilder.Entity<DonHang>().ToTable("DonHang");
+            modelBuilder.Entity<ChiTietDonHang>().ToTable("ChiTietDonHang");
+
+            // 🔥 FK SanPham -> DanhMuc
             modelBuilder.Entity<SanPham>()
                 .HasOne(s => s.DanhMuc)
-                .WithMany()  // Không cần navigation ngược
-                .HasForeignKey(s => s.MaDanhMuc)  // ✅ Tên cột DB: MaDanhMuc
-                .HasPrincipalKey(d => d.MaDanhMuc) // ✅ Explicit Principal Key
+                .WithMany()
+                .HasForeignKey(s => s.MaDanhMuc)
+                .HasPrincipalKey(d => d.MaDanhMuc)
                 .HasConstraintName("FK_SanPham_DanhMuc")
                 .OnDelete(DeleteBehavior.Restrict)
-                .IsRequired(false); // Cho phép null nếu cần
+                .IsRequired(false);
 
             // 🔥 FK TaiKhoan -> ChucVu
             modelBuilder.Entity<TaiKhoan>()
@@ -40,17 +53,69 @@ namespace WebsiteBanXeMay.Data
                 .HasPrincipalKey(c => c.MaChucVu)
                 .HasConstraintName("FK_TaiKhoan_ChucVu")
                 .OnDelete(DeleteBehavior.Restrict)
-                .IsRequired(); // MaChucVu required
+                .IsRequired();
+
+            // 🔥 GIOHANG RELATIONSHIPS
+            modelBuilder.Entity<GioHang>()
+                .HasOne(g => g.TaiKhoan)
+                .WithMany()
+                .HasForeignKey(g => g.MaTaiKhoan)
+                .HasPrincipalKey(t => t.MaTaiKhoan)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ChiTietGioHang>()
+                .HasOne(ct => ct.GioHang)
+                .WithMany(g => g.ChiTietGioHangs)
+                .HasForeignKey(ct => ct.MaGioHang)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ChiTietGioHang>()
+                .HasOne(ct => ct.SanPham)
+                .WithMany()
+                .HasForeignKey(ct => ct.MaSanPham)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // 🔥 🔥 DONHANG RELATIONSHIPS - MỚI ✅
+            modelBuilder.Entity<DonHang>()
+                .HasOne(dh => dh.TaiKhoan)
+                .WithMany()
+                .HasForeignKey(dh => dh.MaTaiKhoan)
+                .HasPrincipalKey(t => t.MaTaiKhoan)
+                .HasConstraintName("FK_DonHang_TaiKhoan")
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ChiTietDonHang>()
+                .HasOne(ct => ct.DonHang)
+                .WithMany(dh => dh.ChiTietDonHangs)
+                .HasForeignKey(ct => ct.MaDonHang)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ChiTietDonHang>()
+                .HasOne(ct => ct.SanPham)
+                .WithMany()
+                .HasForeignKey(ct => ct.MaSanPham)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // 🔥 COLUMN TYPES & INDEXES
             modelBuilder.Entity<SanPham>()
                 .Property(s => s.Gia)
                 .HasColumnType("decimal(18,2)");
 
-            modelBuilder.Entity<SanPham>()
-                .HasIndex(s => s.TrangThai); // Index cho filter nhanh
+            modelBuilder.Entity<DonHang>()
+                .Property(dh => dh.TongTien)
+                .HasColumnType("decimal(18,2)");
 
-            // 🔥 SEED DATA - Chạy 1 lần duy nhất
+            modelBuilder.Entity<ChiTietDonHang>()
+                .Property(ct => ct.GiaBan)
+                .HasColumnType("decimal(18,2)");
+
+            // 🔥 INDEXES FOR PERFORMANCE
+            modelBuilder.Entity<SanPham>().HasIndex(s => s.TrangThai);
+            modelBuilder.Entity<DonHang>().HasIndex(dh => dh.MaTaiKhoan);
+            modelBuilder.Entity<DonHang>().HasIndex(dh => dh.NgayDat);
+            modelBuilder.Entity<DonHang>().HasIndex(dh => dh.TrangThai);
+
+            // 🔥 SEED DATA - EXISTING
             modelBuilder.Entity<ChucVu>().HasData(
                 new ChucVu { MaChucVu = 1, TenChucVu = "Admin" },
                 new ChucVu { MaChucVu = 2, TenChucVu = "Nhân viên" },

@@ -1,10 +1,35 @@
-/* 🔥 NAVBAR MÀU XANH */
+/* ========================================
+   🔥 XE MÁY VN - FULL CUSTOM CSS
+   ======================================== */
+
+/* 🔥 ROOT VARIABLES - MÀU XANH CHỦ ĐẠO */
+:root {
+    --primary: linear-gradient(135deg, #0d6efd 0%, #1e3c72 100%);
+    --primary-dark: rgba(13, 110, 253, 0.95);
+    --warning: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    --danger: linear-gradient(135deg, #dc3545 0%, #ff6b7a 100%);
+    --info: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+    --success: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    /* SHADOWS */
+    --shadow-xs: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-sm: 0 5px 20px rgba(0,0,0,0.15);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.2);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.25);
+    --shadow-xl: 0 25px 80px rgba(0,0,0,0.3);
+    /* BACKDROP */
+    --backdrop-blur: blur(20px);
+    /* TRANSITIONS */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 🔥 NAVBAR XANH - FIXED TOP */
 #mainNavbar {
-    background: linear-gradient(135deg, #0d6efd 0%, #1e3c72 100%) !important;
+    background: var(--primary) !important;
     box-shadow: var(--shadow-xl);
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--backdrop-blur);
     padding: 1.2rem 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-smooth);
     height: 85px;
     top: 0;
     z-index: 1060;
@@ -12,54 +37,320 @@
     width: 100%;
 }
 
-    /* 🔥 USER INFO SHRINK - ĐÚNG SELECTOR */
-    #mainNavbar.scroll-shrinked .user-avatar {
-        width: 42px !important;
-        height: 42px !important;
+    /* 🔥 NAVBAR SHRINK STATE */
+    #mainNavbar.scroll-shrinked {
+        height: 70px !important;
+        padding: 0.5rem 0 !important;
+        background: var(--primary-dark) !important;
+        box-shadow: var(--shadow-lg);
     }
 
-        #mainNavbar.scroll-shrinked .user-avatar i {
-            font-size: 1.1rem !important;
+        /* 🔥 LOGO RESPONSIVE */
+        #mainNavbar.scroll-shrinked .navbar-brand {
+            font-size: 1.4rem !important;
+            padding: 0.25rem 0 !important;
         }
 
-    #mainNavbar.scroll-shrinked .user-info {
-        max-width: 100px !important;
-        font-size: 0.9rem !important;
-        opacity: 0.9 !important;
-    }
+        /* 🔥 USER AVATAR SHRINK */
+        #mainNavbar.scroll-shrinked .user-avatar {
+            width: 42px !important;
+            height: 42px !important;
+            margin-right: 0.5rem !important;
+        }
 
-    #mainNavbar.scroll-shrinked .dropdown-toggle {
-        padding: 8px 12px !important;
-    }
+            #mainNavbar.scroll-shrinked .user-avatar i {
+                font-size: 1.1rem !important;
+            }
 
-        /* 🔥 HOVER MỞ RỘNG */
+        /* 🔥 USER INFO SHRINK + HOVER EXPAND */
+        #mainNavbar.scroll-shrinked .user-info {
+            max-width: 100px !important;
+            font-size: 0.85rem !important;
+            opacity: 0.9 !important;
+            margin-right: 0.5rem !important;
+            transition: var(--transition-fast);
+        }
+
         #mainNavbar.scroll-shrinked .dropdown-toggle:hover .user-info {
             max-width: 140px !important;
             opacity: 1 !important;
         }
 
-/* 🔥 ROOT VARIABLES - CẬP NHẬT MÀU XANH */
-:root {
-    --primary: linear-gradient(135deg, #0d6efd 0%, #1e3c72 100%);
-    --warning: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
-    --danger: linear-gradient(135deg, #dc3545 0%, #ff6b7a 100%);
-    --info: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,0.25);
-    --shadow-xl: 0 25px 80px rgba(0,0,0,0.3);
-    --shadow-md: 0 10px 30px rgba(0,0,0,0.2);
-}
-/* 🔥 TĂNG KHOẢNG CÁCH NAVBAR - CONTENT */
+        /* 🔥 DROPDOWN TOGGLE */
+        #mainNavbar.scroll-shrinked .dropdown-toggle {
+            padding: 8px 12px !important;
+            border-radius: 10px !important;
+            transition: var(--transition-fast);
+        }
+
+        /* 🔥 SEARCH BAR SHRINK */
+        #mainNavbar.scroll-shrinked .search-input-group {
+            height: 45px !important;
+        }
+
+        #mainNavbar.scroll-shrinked #searchInput {
+            font-size: 0.9rem !important;
+            padding: 0.5rem !important;
+        }
+
+        #mainNavbar.scroll-shrinked #hangXeFilter {
+            font-size: 0.9rem !important;
+            max-width: 140px !important;
+        }
+
+/* 🔥 MAIN CONTENT SPACING */
 main {
-    padding-top: 5rem !important; /* ← TĂNG TỪ 5rem → 8rem */
+    padding-top: 5.5rem !important;
     padding-bottom: 5rem !important;
+    min-height: calc(100vh - 200px);
 }
 
-#mainNavbar.scroll-shrinked {
-    height: 70px !important; /* ← Navbar co lại nhỏ hơn */
-    padding: 0.5rem 0 !important;
+#mainNavbar.scroll-shrinked ~ main {
+    padding-top: 4.5rem !important;
 }
 
-.slider-container {
-    margin-top: 2rem !important; /* ← Slider cách navbar xa hơn */
+/* 🔥 SLIDER & HERO */
+.slider-container,
+.hero-section {
+    margin-top: 6rem !important;
     margin-bottom: 4rem !important;
+}
+
+/* 🔥 SEARCH GLASSMORPHISM */
+.search-input-group {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px !important;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+    .search-input-group:focus-within {
+        background: rgba(255, 255, 255, 0.18) !important;
+        border-color: #ffd200 !important;
+        box-shadow: 0 0 0 0.25rem rgba(255, 210, 0, 0.25), var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+/* 🔥 BUTTONS */
+.btn-warning {
+    background: var(--warning) !important;
+    border: none !important;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    font-weight: 600 !important;
+}
+
+    .btn-warning:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: var(--shadow-xl);
+    }
+
+/* 🔥 HOVER EFFECTS */
+.hover-btn,
+.hover-cart,
+.hover-user,
+.nav-link {
+    transition: var(--transition-fast);
+    border-radius: 12px !important;
+}
+
+    .hover-btn:hover,
+    .hover-cart:hover,
+    .hover-user:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: var(--shadow-lg) !important;
+    }
+
+    .nav-link.active-link {
+        background: rgba(255, 255, 255, 0.15) !important;
+        color: #ffd200 !important;
+    }
+
+/* 🔥 SEARCH SUGGESTIONS */
+#searchSuggestions {
+    box-shadow: var(--shadow-xl) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.suggestion-item {
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.hover-suggestion:hover {
+    background: linear-gradient(90deg, #f8f9fa, #e9ecef) !important;
+    transform: translateX(8px);
+}
+
+/* 🔥 SCROLL TOP BUTTON */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--warning);
+    color: white;
+    border: none;
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    z-index: 9999;
+}
+
+    #scrollTopBtn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    #scrollTopBtn:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: var(--shadow-xl);
+    }
+
+/* 🔥 CART BADGE */
+.cart-count {
+    min-width: 22px;
+    height: 22px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    top: -8px;
+    right: -8px;
+}
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 991px) {
+    #mainNavbar {
+        height: 75px;
+        padding: 1rem 0;
+    }
+
+        #mainNavbar.scroll-shrinked {
+            height: 65px;
+            padding: 0.75rem 0;
+        }
+
+    main {
+        padding-top: 5rem !important;
+    }
+
+    #mainNavbar.scroll-shrinked ~ main {
+        padding-top: 4rem !important;
+    }
+
+    .navbar-search {
+        order: 3;
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    #scrollTopBtn {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* 🔥 DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .search-input-group {
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+        .search-input-group:focus-within {
+            background: rgba(255, 255, 255, 0.12) !important;
+        }
+}
+/* 🔥 DROPDOWN ULTIMATE FIX */
+.dropdown-menu {
+    z-index: 1080 !important;
+    box-shadow: var(--shadow-xl) !important;
+}
+
+#mainNavbar .dropdown-menu {
+    margin-top: 12px !important;
+}
+
+#mainNavbar.scroll-shrinked .dropdown-menu {
+    margin-top: 8px !important;
+}
+
+/* Fix mobile dropdown */
+@media (max-width: 991px) {
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        width: auto !important;
+        margin-top: 0 !important;
+        background-color: rgba(13, 110, 253, 0.98);
+        border: 0;
+        box-shadow: none;
+    }
+
+        .navbar-nav .dropdown-menu .dropdown-item {
+            color: rgba(255,255,255,0.9);
+            padding: 12px 24px;
+        }
+}
+/* 🔥 PURE CSS DROPDOWN - NO JS DEPENDENCY */
+.dropdown-menu {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999 !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    min-width: 340px !important;
+    border-radius: 20px !important;
+    box-shadow: var(--shadow-xl) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+    body.dropdown-open .dropdown-menu.show,
+    .dropdown-menu.show {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0);
+    }
+
+#mainNavbar.scroll-shrinked .dropdown-menu {
+    top: calc(100% + 8px) !important;
+}
+
+/* Hover states */
+.hover-user:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+    .dropdown-menu {
+        position: static !important;
+        min-width: 100% !important;
+        border-radius: 0 !important;
+        box-shadow: inset 0 2px 10px rgba(0,0,0,0.2) !important;
+        background: rgba(13, 110, 253, 0.98) !important;
+    }
+
+        .dropdown-menu .dropdown-item {
+            color: rgba(255,255,255,0.95) !important;
+        }
+
+            .dropdown-menu .dropdown-item:hover {
+                background: rgba(255,255,255,0.15) !important;
+                color: white !important;
+            }
 }

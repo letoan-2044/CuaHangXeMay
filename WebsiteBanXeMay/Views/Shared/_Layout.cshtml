@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Xe Máy VN - Chuyên xe máy chính hãng Honda, Yamaha, Suzuki giá tốt nhất thị trường" />
-    <meta name="keywords" content="xe máy, honda, yamaha, suzuki, xe máy chính hãng, xe máy giá rẻ" />
+    <meta name="keywords" content="xe máy, honda, yamaha, suzuki, xe máy chính hãng, xe máy giá rẻ, tìm kiếm xe máy" />
     <title>@ViewData["Title"] - Xe Máy VN</title>
     <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
 
@@ -32,34 +32,68 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar Content -->
+            <!-- 🔥 NAVBAR CONTENT - TÌM KIẾM + MENU + USER -->
             <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- MENU CHUNG -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- 🔥 THANH TÌM KIẾM & LỌC HÃNG XE - GIỮA NAVBAR -->
+                <div class="navbar-search flex-grow-1 me-3 mb-2 mb-lg-0 mx-lg-3">
+                    <form class="search-form position-relative d-flex w-100" id="searchForm" method="get" action="@Url.Action("Index", "SanPham")">
+                        <div class="input-group w-100 rounded-pill shadow-sm overflow-hidden search-input-group" style="height: 52px;">
+                            <!-- Icon tìm kiếm -->
+                            <span class="input-group-text bg-transparent border-0 px-3 py-2">
+                                <i class="fas fa-search text-white-50 fs-5"></i>
+                            </span>
+                            
+                            <!-- Input tìm kiếm -->
+                            <input type="search" 
+                                   class="form-control border-0 bg-transparent shadow-none ps-2 py-2 fs-6" 
+                                   name="tuKhoa" 
+                                   id="searchInput"
+                                   placeholder="🔍 Tìm kiếm xe máy, Honda, Yamaha, Wave..." 
+                                   autocomplete="off"
+                                   value="@Context.Request.Query["tuKhoa"]">
+                            
+                            <!-- Dropdown lọc hãng xe -->
+                            <select class="form-select border-0 bg-transparent shadow-none px-3 py-2 fw-medium"
+                                    name="hangXe" id="hangXeFilter" style="max-width: 160px;">
+                                <option value="">Tất cả hãng</option>
+                                @{
+                                    var selectedHangXe = ViewBag?.SelectedHangXe?.ToString() ?? "";
+                                }
+                                <option value="Honda" selected="@(selectedHangXe == "Honda")">Honda</option>
+                                <option value="Yamaha" selected="@(selectedHangXe == "Yamaha")">Yamaha</option>
+                                <option value="Suzuki" selected="@(selectedHangXe == "Suzuki")">Suzuki</option>
+                            </select>
+                            
+                            <!-- Nút tìm kiếm -->
+                            <button class="btn btn-warning border-0 px-4 py-2 shadow-none fw-bold rounded-end-pill" type="submit" id="searchBtn">
+                                <i class="fas fa-search me-1"></i><span class="d-none d-sm-inline">Tìm</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- MENU CHUNG - BÊN PHẢI -->
+
+                <ul class="navbar-nav mb-2 mb-lg-0 me-3">
                     <li class="nav-item">
-                        <a class="nav-link active-link" asp-controller="Home" asp-action="Index">
-                            <i class="fas fa-home me-1"></i>Trang chủ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active-link" asp-controller="SanPham" asp-action="Index">
+                        <a class="nav-link active-link px-3 py-2" asp-controller="SanPham" asp-action="Index" asp-route-tuKhoa="@Context.Request.Query["tuKhoa"]" asp-route-hangXe="@Context.Request.Query["hangXe"]">
                             <i class="fas fa-list me-1"></i>Sản phẩm
                         </a>
                     </li>
                 </ul>
 
-                <!-- 🔥 MENU USER & CART -->
+                <!-- 🔥 MENU USER & CART - GIỮ NGUYÊN -->
                 <ul class="navbar-nav align-items-center">
                     @if (string.IsNullOrEmpty(Context.Session.GetString("TenDangNhap")))
                     {
                         <!-- CHƯA ĐĂNG NHẬP -->
                         <li class="nav-item me-2">
-                            <a class="btn btn-outline-light btn-sm px-3 hover-btn" asp-controller="TaiKhoan" asp-action="DangKi">
+                            <a class="btn btn-outline-light btn-sm px-3 py-2 hover-btn rounded-pill" asp-controller="TaiKhoan" asp-action="DangKi">
                                 <i class="fas fa-user-plus me-1"></i>Đăng ký
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-warning btn-sm fw-bold px-4" asp-controller="TaiKhoan" asp-action="DangNhap">
+                            <a class="btn btn-warning btn-sm fw-bold px-4 py-2 rounded-pill" asp-controller="TaiKhoan" asp-action="DangNhap">
                                 <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
                             </a>
                         </li>
@@ -70,7 +104,7 @@
                         <!-- GIỎ HÀNG -->
                         <li class="nav-item position-relative me-3">
                             <a class="nav-link text-white position-relative p-2 rounded-3 hover-cart"
-                               asp-controller="TaiKhoan" asp-action="GioHangCuaToi" title="Giỏ hàng của tôi">
+                               asp-controller="GioHang" asp-action="Index" title="Giỏ hàng của tôi">
                                 <i class="fas fa-shopping-cart fs-5"></i>
                                 @{
                                     var soLuongGioHang = Context.Session.GetInt32("SoLuongGioHang") ?? 0;
@@ -83,11 +117,12 @@
                             </a>
                         </li>
 
-                        <!-- USER DROPDOWN -->
+                        <!-- USER DROPDOWN - GIỮ NGUYÊN 100% -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white d-flex align-items-center p-2 rounded-3 hover-user"
-                               href="#" role="button" data-bs-toggle="dropdown" id="userDropdown"
-                               aria-expanded="false">
+                               id="userDropdownPure"
+                               style="cursor: pointer !important;"
+                               role="button">
                                 @{
                                     var chucVu = Context.Session.GetString("ChucVu") ?? "Khách hàng";
                                     var hoTen = Context.Session.GetString("HoTen") ?? "Người dùng";
@@ -112,11 +147,10 @@
                                 </div>
                             </a>
 
-                            <!-- DROPDOWN MENU -->
+                            <!-- DROPDOWN MENU - GIỮ NGUYÊN -->
                             <ul class="dropdown-menu dropdown-menu-end shadow-xl border-0 mt-2 animate__animated animate__fadeIn"
                                 style="min-width: 320px; border-radius: 16px;" aria-labelledby="userDropdown">
-
-                                <!-- Profile Card -->
+                                <!-- TOÀN BỘ DROPDOWN MENU GIỮ NGUYÊN NHƯ CODE CŨ -->
                                 <li class="dropdown-header p-4 bg-gradient-primary text-white border-bottom rounded-top-3 position-relative">
                                     <div class="d-flex align-items-center">
                                         <div class="user-avatar-large bg-white bg-opacity-20 rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
@@ -143,119 +177,67 @@
                                         #@Context.Session.GetInt32("MaTaiKhoan")
                                     </small>
                                 </li>
-
-                                <!-- QUẢN LÝ TÀI KHOẢN -->
                                 <li>
                                     <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="ThongTin">
-                                        <i class="fas fa-user-circle me-3 text-primary fs-5 opacity-80"></i>
-                                        Thông tin cá nhân
+                                        <i class="fas fa-user-circle me-3 text-primary fs-5 opacity-80"></i>Thông tin cá nhân
                                     </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="DoiMatKhau">
-                                        <i class="fas fa-lock me-3 text-warning fs-5 opacity-80"></i>
-                                        Đổi mật khẩu
+                                        <i class="fas fa-lock me-3 text-warning fs-5 opacity-80"></i>Đổi mật khẩu
                                     </a>
                                 </li>
-
-                                <!-- KHÁCH HÀNG -->
                                 @if (chucVu == "Khách hàng")
                                 {
                                     <li><hr class="dropdown-divider mx-3 opacity-50"></li>
-                                    <li>
-                                        <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="GioHangCuaToi">
-                                            <i class="fas fa-shopping-cart me-3 text-success fs-5 opacity-80"></i>
-                                            Giỏ hàng của tôi
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="LichSuDonHang">
-                                            <i class="fas fa-box me-3 text-info fs-5 opacity-80"></i>
-                                            Lịch sử đơn hàng
-                                        </a>
-                                    </li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="GioHang"><i class="fas fa-shopping-cart me-3 text-success fs-5 opacity-80"></i>Giỏ hàng của tôi</a></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="LichSuDonHang"><i class="fas fa-box me-3 text-info fs-5 opacity-80"></i>Lịch sử đơn hàng</a></li>
                                 }
-
-                                <!-- ADMIN -->
                                 @if (chucVu == "Admin")
                                 {
                                     <li><hr class="dropdown-divider mx-3 opacity-50"></li>
-                                    <li class="dropdown-header px-4 py-3 bg-gradient-danger text-white border-bottom">
-                                        <i class="fas fa-crown text-warning me-2"></i>
-                                        <strong>🔥 QUẢN TRỊ VIÊN</strong>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="Admin" asp-action="Index">
-                                            <i class="fas fa-tachometer-alt me-3 text-danger fs-5 opacity-80"></i>Bảng điều khiển
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham">
-                                            <i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="QuanLyTaiKhoan">
-                                            <i class="fas fa-users me-3 text-info fs-5 opacity-80"></i>Quản lý tài khoản
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang">
-                                            <i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng
-                                        </a>
-                                    </li>
+                                    <li class="dropdown-header px-4 py-3 bg-gradient-danger text-white border-bottom"><i class="fas fa-crown text-warning me-2"></i><strong>🔥 QUẢN TRỊ VIÊN</strong></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt me-3 text-danger fs-5 opacity-80"></i>Bảng điều khiển</a></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham"><i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm</a></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="QuanLyTaiKhoan"><i class="fas fa-users me-3 text-info fs-5 opacity-80"></i>Quản lý tài khoản</a></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang"><i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng</a></li>
                                 }
                                 else if (chucVu == "Nhân viên")
                                 {
-                                <li><hr class="dropdown-divider mx-3 opacity-50"></li>
-                                <li class="dropdown-header px-4 py-3 bg-gradient-info text-white border-bottom">
-                                    <i class="fas fa-user-tie text-primary me-2"></i>
-                                    <strong>⚙️ NHÂN VIÊN</strong>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="Admin" asp-action="Index">
-                                        <i class="fas fa-tachometer-alt me-3 text-info fs-5 opacity-80"></i>Bảng điều khiển
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham">
-                                        <i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang">
-                                        <i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng
-                                    </a>
-                                </li>
+                                    <li><hr class="dropdown-divider mx-3 opacity-50"></li>
+                                    <li class="dropdown-header px-4 py-3 bg-gradient-info text-white border-bottom"><i class="fas fa-user-tie text-primary me-2"></i><strong>⚙️ NHÂN VIÊN</strong></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt me-3 text-info fs-5 opacity-80"></i>Bảng điều khiển</a></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham"><i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm</a></li>
+                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang"><i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng</a></li>
                                 }
-
-                                <!-- LOGOUT -->
                                 <li><hr class="dropdown-divider mx-3 opacity-50"></li>
                                 <li>
                                     <form asp-controller="TaiKhoan" asp-action="DangXuat" method="post" class="px-3 pb-2">
                                         @Html.AntiForgeryToken()
                                         <button type="submit" class="dropdown-item text-danger fw-semibold border-0 w-100 text-start p-3 rounded-2 hover-logout transition-all">
-                                            <i class="fas fa-sign-out-alt me-3 fs-5"></i>
-                                            <span>Đăng xuất</span>
+                                            <i class="fas fa-sign-out-alt me-3 fs-5"></i><span>Đăng xuất</span>
                                         </button>
                                     </form>
                                 </li>
                             </ul>
                         </li>
+                    
                     }
                 </ul>
             </div>
         </div>
     </nav>
-
+    <button id="scrollTopBtn" title="Lên đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
     <!-- MAIN CONTENT -->
-    <main role="main" class="flex-grow-1 pb-5 ">
+    <main role="main" class="flex-grow-1">
         <div class="container-fluid">
             @RenderBody()
         </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER - GIỮ NGUYÊN -->
     <footer class="bg-dark text-light py-5 mt-auto">
         <div class="container">
             <div class="row">
@@ -290,12 +272,16 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

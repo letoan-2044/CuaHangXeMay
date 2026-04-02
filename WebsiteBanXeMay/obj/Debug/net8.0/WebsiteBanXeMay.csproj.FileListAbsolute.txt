@@ -261,3 +261,4 @@ D:\ttck\WebsiteBanXeMay\WebsiteBanXeMay\bin\Debug\net8.0\PagedList.Mvc.dll
 D:\ttck\WebsiteBanXeMay\WebsiteBanXeMay\bin\Debug\net8.0\X.PagedList.dll
 D:\ttck\WebsiteBanXeMay\WebsiteBanXeMay\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 D:\ttck\WebsiteBanXeMay\WebsiteBanXeMay\obj\Debug\net8.0\WebsiteBanXeMay.MvcApplicationPartsAssemblyInfo.cs
+D:\ttck\WebsiteBanXeMay\WebsiteBanXeMay\obj\Debug\net8.0\WebsiteBanXeMay.sourcelink.json

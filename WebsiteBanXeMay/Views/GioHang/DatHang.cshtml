@@ -1,0 +1,281 @@
+﻿@model WebsiteBanXeMay.Models.DatHangViewModel
+@{
+    ViewData["Title"] = "Đặt hàng - Xe Máy VN";
+}
+
+<div class="container-fluid my-5 px-lg-5">
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent p-3 rounded-3 shadow-sm mb-4">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a asp-controller="GioHang" asp-action="Index">Giỏ hàng</a></li>
+            <li class="breadcrumb-item active">Đặt hàng</li>
+        </ol>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <!-- HEADER -->
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-5 pb-4 border-bottom">
+                <div>
+                    <h1 class="display-4 fw-bold text-dark mb-2">
+                        <i class="fas fa-file-invoice-dollar text-success me-3"></i>
+                        Xác nhận đơn hàng
+                    </h1>
+                    <div class="h5 text-muted mb-0">
+                        <i class="fas fa-info-circle me-1"></i>
+                        @Model.ChiTietGioHangs.Sum(ct => ct.SoLuong) sản phẩm - @Model.TongTien.ToString("N0") VNĐ
+                    </div>
+                </div>
+                <a asp-controller="GioHang" asp-action="Index"
+                   class="btn btn-outline-primary btn-lg px-5 py-3 fw-bold shadow-sm">
+                    <i class="fas fa-arrow-left me-2"></i>Quay lại giỏ hàng
+                </a>
+            </div>
+
+            <!-- ALERTS -->
+            @if (TempData["ThanhCong"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show border-start border-5 border-success shadow-sm mb-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle fa-2x me-3 text-success flex-shrink-0"></i>
+                        <div>@((string)TempData["ThanhCong"])</div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            @if (TempData["Loi"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show border-start border-5 border-danger shadow-sm mb-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exclamation-triangle fa-2x me-3 text-danger flex-shrink-0"></i>
+                        <div>@TempData["Loi"]</div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <!-- 🔥 FIXED: CHỈ 1 CẶP if/else -->
+            @if (!Model.ChiTietGioHangs.Any())
+            {
+                <!-- GIỎ TRỐNG -->
+                <div class="row justify-content-center py-5 my-5">
+                    <div class="col-lg-6 col-md-8 text-center">
+                        <div class="empty-cart-icon mb-4">
+                            <i class="fas fa-shopping-cart fa-5x text-muted opacity-25"></i>
+                        </div>
+                        <h2 class="display-5 fw-bold text-muted mb-4">Giỏ hàng trống</h2>
+                        <p class="lead text-muted mb-5">
+                            Chưa có sản phẩm nào trong giỏ hàng của bạn.
+                            <br><strong>Hãy <a asp-controller="SanPham" asp-action="Index">tiếp tục mua sắm</a>!</strong>
+                        </p>
+                        <a asp-controller="SanPham" asp-action="Index"
+                           class="btn btn-primary btn-lg px-5 py-3 fw-bold shadow-lg">
+                            <i class="fas fa-store me-2"></i>Bắt đầu mua sắm
+                        </a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <!-- 🔥 FORM ĐẶT HÀNG (KHÔNG CÒN else thừa) -->
+                <div class="row g-4">
+                    <!-- FORM ĐẶT HÀNG -->
+                    <div class="col-xl-8">
+                        <div class="card shadow-xl border-0 h-100">
+                            <div class="card-header bg-gradient-primary text-white p-4 border-0">
+                                <h3 class="mb-0 fw-bold d-flex align-items-center">
+                                    <i class="fas fa-user-circle me-3 fs-4 text-white"></i>
+                                    Thông tin nhận hàng
+                                </h3>
+                            </div>
+
+                            <!-- 🔥 FORM CHÍNH -->
+                            <form asp-action="DatHang" method="post">
+                                @Html.AntiForgeryToken()
+
+                                <div class="card-body p-4">
+                                    <!-- THÔNG TIN KHÁCH HÀNG -->
+                                    <div class="row g-4 mb-5">
+                                        <div class="col-md-6">
+                                            <label asp-for="DonHang.SoDienThoai" class="form-label fw-bold fs-5">
+                                                Số điện thoại <span class="text-danger">*</span>
+                                            </label>
+                                            <input asp-for="DonHang.SoDienThoai" class="form-control form-control-lg" required />
+                                            <span asp-validation-for="DonHang.SoDienThoai" class="text-danger small"></span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label asp-for="DonHang.DiaChiGiaoHang" class="form-label fw-bold fs-5">
+                                                Địa chỉ giao hàng <span class="text-danger">*</span>
+                                            </label>
+                                            <input asp-for="DonHang.DiaChiGiaoHang" class="form-control form-control-lg"
+                                                   placeholder="Số nhà, đường, phường, quận, TP.HCM..." required />
+                                            <span asp-validation-for="DonHang.DiaChiGiaoHang" class="text-danger small"></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- DANH SÁCH SẢN PHẨM -->
+                                    <div class="card shadow-sm border-0 mb-4">
+                                        <div class="card-header bg-light border-0 py-3">
+                                            <h5 class="mb-0 fw-bold d-flex align-items-center">
+                                                <i class="fas fa-list me-2 text-primary"></i>
+                                                Sản phẩm trong đơn hàng (@Model.ChiTietGioHangs.Count() sp)
+                                            </h5>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            @foreach (var ctgh in Model.ChiTietGioHangs)
+                                            {
+                                                <div class="p-4 border-bottom">
+                                                    <div class="row align-items-center g-3">
+                                                        <div class="col-md-2 col-3">
+                                                            <img src="~/images/@(ctgh.SanPham.HinhAnh ?? "no-image.jpg")"
+                                                                 alt="@ctgh.SanPham.TenSanPham"
+                                                                 class="img-fluid rounded-3 shadow-sm w-100"
+                                                                 style="height: 80px; object-fit: cover;" />
+                                                        </div>
+                                                        <div class="col-md-5 col-6">
+                                                            <h6 class="mb-1 fw-bold">@ctgh.SanPham.TenSanPham</h6>
+                                                            <small class="text-muted">
+                                                                Mã: #@ctgh.SanPham.MaSanPham |
+                                                                Còn @ctgh.SanPham.SoLuongTon sp
+                                                            </small>
+                                                        </div>
+                                                        <div class="col-md-2 col-2 text-center">
+                                                            <div class="h6 fw-bold text-primary mb-0">@ctgh.SoLuong</div>
+                                                            <small class="text-muted">sản phẩm</small>
+                                                        </div>
+                                                        <div class="col-md-3 col-12 text-md-end">
+                                                            <div class="h5 fw-bold text-success mb-1">
+                                                                @((ctgh.SoLuong * ctgh.SanPham.Gia).ToString("N0"))
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                @ctgh.SanPham.Gia.ToString("N0") VNĐ/sp
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <!-- GHI CHÚ & THANH TOÁN -->
+                                    <div class="row g-4">
+                                        <div class="col-lg-8">
+                                            <label class="form-label fw-bold fs-5">Ghi chú đơn hàng</label>
+                                            <textarea name="DonHang.GhiChu" class="form-control form-control-lg" rows="3"
+                                                  placeholder="Yêu cầu giao hàng 8h-12h, lắp đặt tại nhà..."></textarea>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="form-label fw-bold fs-5 text-success">Phương thức</label>
+                                            <div class="card border-0 shadow-sm h-100">
+                                                <div class="card-body p-3 text-center">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="DonHang.PhuongThucThanhToan"
+                                                               id="COD" value="COD" checked>
+                                                        <label class="form-check-label fw-semibold fs-6" for="COD">
+                                                            <i class="fas fa-money-bill-wave text-success me-2"></i>
+                                                            Thanh toán khi nhận hàng (COD)
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NÚT SUBMIT -->
+                                <div class="card-footer bg-transparent border-0 p-4">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <a asp-controller="GioHang" asp-action="Index"
+                                               class="btn btn-outline-secondary btn-lg w-100 py-3 fw-bold">
+                                                <i class="fas fa-arrow-left me-2"></i>Chỉnh sửa giỏ hàng
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-success btn-lg w-100 py-3 fw-bold shadow-lg fs-5">
+                                                <i class="fas fa-credit-card me-2"></i>
+                                                ĐẶT HÀNG NGAY
+                                                <div class="h5 fw-bold text-white mt-1">@Model.TongTien.ToString("N0") VNĐ</div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- THANH TOÁN SUMMARY -->
+                    <div class="col-xl-4">
+                        <div class="card shadow-xl border-0 sticky-top" style="top: 20px;">
+                            <div class="card-header bg-gradient-success text-white p-4 border-0">
+                                <h3 class="mb-0 fw-bold d-flex align-items-center">
+                                    <i class="fas fa-receipt me-3 fs-4 text-white"></i>
+                                    Tổng kết đơn hàng
+                                </h3>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="order-summary mb-4">
+                                    <div class="d-flex justify-content-between mb-3 fs-5 fw-semibold">
+                                        <span>Tạm tính (@Model.ChiTietGioHangs.Count() sp):</span>
+                                        <span>@Model.TongTien.ToString("N0") VNĐ</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                                        <span class="text-success fs-6">
+                                            <i class="fas fa-truck me-1"></i>Phí giao hàng:
+                                        </span>
+                                        <span class="badge bg-success px-3 py-2 fs-6">MIỄN PHÍ</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between h3 fw-bold text-success mb-0">
+                                        <span>TỔNG THANH TOÁN</span>
+                                        <span>@Model.TongTien.ToString("N0") VNĐ</span>
+                                    </div>
+                                </div>
+
+                                <!-- CAM KẾT -->
+                                <div class="p-3 bg-light rounded-3 mb-4">
+                                    <h6 class="fw-bold mb-3 text-center text-success">
+                                        <i class="fas fa-shield-alt me-2"></i>Cam kết Xe Máy VN
+                                    </h6>
+                                    <div class="d-flex align-items-center mb-2 small">
+                                        <i class="fas fa-truck text-success me-2 fs-5"></i>
+                                        <span>Giao hàng toàn quốc 2-5 ngày</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2 small">
+                                        <i class="fas fa-undo text-success me-2 fs-5"></i>
+                                        <span>Đổi trả miễn phí 30 ngày</span>
+                                    </div>
+                                    <div class="d-flex align-items-center small">
+                                        <i class="fas fa-headset text-success me-2 fs-5"></i>
+                                        <span>Hỗ trợ 24/7 - 1900.XXXX</span>
+                                    </div>
+                                </div>
+
+                                <div class="text-center p-3 border rounded-3 bg-warning bg-opacity-10">
+                                    <i class="fas fa-lock fa-2x text-warning mb-2"></i>
+                                    <div class="fw-bold text-warning">100% AN TOÀN</div>
+                                    <small class="text-muted">Thanh toán khi nhận hàng</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sdtInput = document.querySelector('input[name="DonHang.SoDienThoai"]');
+            const diaChiInput = document.querySelector('input[name="DonHang.DiaChiGiaoHang"]');
+
+            if (sdtInput && !sdtInput.value) {
+                sdtInput.value = '@(Context.Session.GetString("SoDienThoai") ?? "")';
+            }
+        });
+    </script>
+}
