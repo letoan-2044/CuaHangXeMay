@@ -1,0 +1,260 @@
+﻿/* ========================================
+   🔥 DONHANG STYLES - FIXED VERSION
+======================================== */
+
+/* 🏗️ CONTAINER */
+.donhang-container {
+    min-height: 70vh;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f4ff 100%);
+}
+
+/* 🔥 STATUS BADGES - SỬA CLASS TÊN + THÊM CHO CẢ 2 */
+.trang-thai-cho-xu-ly,
+.trạng-thái-chờ-xử-lý {
+    background: linear-gradient(135deg, #ffc107, #ffed4e) !important;
+    color: #000 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255,193,7,0.4);
+    animation: pulse-slow 3s infinite;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trang-thai-dang-giao,
+.trạng-thái-đang-giao {
+    background: linear-gradient(135deg, #fd7e14, #ff9a56) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(253,126,20,0.4);
+}
+
+.trang-thai-da-giao,
+.trạng-thái-đã-giao {
+    background: linear-gradient(135deg, #198754, #20c997) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(25,135,84,0.5);
+}
+
+.trang-thai-huy,
+.trạng-thái-hủy {
+    background: linear-gradient(135deg, #dc3545, #ff6b7a) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(220,53,69,0.4);
+}
+
+/* 🛡️ HEADER CLASSES - CŨNG PHẢI SỬA */
+.donhang-card-header.cho-xu-ly {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+}
+
+.donhang-card-header.dang-giao {
+    background: linear-gradient(135deg, #fff5d1, #ffd43b);
+}
+
+.donhang-card-header.da-giao {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+}
+
+.donhang-card-header.huy {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+}
+
+/* 👇 PHẦN CÒN LẠI GIỮ NGUYÊN - RẤT ĐẸP! */
+.donhang-card {
+    border: none !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+    .donhang-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+        z-index: 2;
+    }
+
+    .donhang-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .donhang-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.25) !important;
+    }
+
+/* 📱 CARD HEADER */
+.donhang-card-header {
+    position: relative;
+    min-height: 90px;
+    padding: 1.75rem 1.5rem;
+    overflow: hidden;
+}
+
+    .donhang-card-header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: rgba(255,255,255,0.4);
+    }
+
+/* PRODUCT ITEMS */
+.product-item {
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.4s ease;
+    margin-bottom: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+    .product-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 4px;
+        background: linear-gradient(180deg, #0d6efd, #6610f2);
+    }
+
+    .product-item:hover {
+        background: rgba(255,255,255,1);
+        transform: translateX(10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+/* 💰 TOTAL FOOTER */
+.donhang-total {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 50%, #6610f2 100%) !important;
+    border-radius: 0 0 24px 24px !important;
+    padding: 1.75rem 1.5rem !important;
+    position: relative;
+    overflow: hidden;
+}
+
+    .donhang-total::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: float 6s ease-in-out infinite;
+    }
+
+/* 🗂️ ADMIN TABLE */
+.table-donhang thead th {
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7, #6610f2) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 1.25rem 1rem !important;
+}
+
+.table-donhang tbody tr:hover {
+    background: linear-gradient(90deg, rgba(13,110,253,0.08), rgba(102,16,242,0.08)) !important;
+    transform: scale(1.005);
+}
+
+/* 🔍 FILTER & SEARCH */
+.search-filter-card {
+    border-radius: 24px;
+    backdrop-filter: blur(25px);
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+    .search-filter-card .form-control,
+    .search-filter-card .form-select {
+        border-radius: 16px !important;
+        border: 2px solid rgba(0,0,0,0.08) !important;
+        padding: 0.875rem 1.5rem !important;
+        font-weight: 500;
+        background: rgba(255,255,255,0.9);
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+        .search-filter-card .form-control:focus,
+        .search-filter-card .form-select:focus {
+            border-color: #0d6efd !important;
+            box-shadow: 0 0 0 0.375rem rgba(13,110,253,0.15) !important;
+            background: #fff !important;
+            transform: translateY(-2px);
+        }
+
+/* 🔔 ANIMATIONS */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(180deg);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+    .donhang-card-header h5 {
+        font-size: 1.1rem !important;
+    }
+}
+/* 🔥 FIX "ĐÃ GIAO" TRẮNG → XANH LÁ */
+.trạng-thái-da-giao {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(25,135,84,0.5) !important;
+}
+
+/* 🔥 FORCE TEXT - Backup */
+.badge-trangthai:has(> text("Đã giao")),
+.badge-trangthai:contains("Đã giao") {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: white !important !important;
+}

@@ -1,0 +1,115 @@
+﻿@model dynamic
+@{
+    var currentPage = Model?.currentPage ?? 1;
+    var totalPages = Model?.totalPages ?? 1;
+    var query = ViewContext.HttpContext.Request.Query;
+
+    // Build query string không có page
+    var queryParams = new Dictionary<string, string>();
+    foreach (var kvp in query)
+    {
+        if (kvp.Key.ToLower() != "page")
+            queryParams[kvp.Key] = kvp.Value;
+    }
+    var queryString = string.Join("&", queryParams.Select(q => $"{q.Key}={q.Value}"));
+}
+
+@if (totalPages > 1)
+{
+    <div class="row justify-content-center mt-5 mb-4">
+        <div class="col-auto">
+            <nav aria-label="Phân trang đơn hàng">
+                <ul class="pagination pagination-lg mb-0 shadow-sm">
+                    <!-- First Page -->
+                    @if (currentPage > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link rounded-start" href="?page=1@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">
+                                <i class="fas fa-angle-double-left me-1"></i> Đầu
+                            </a>
+                        </li>
+                    }
+
+                    <!-- Previous -->
+                    @if (currentPage > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?page=@(currentPage - 1)@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                    }
+
+                    <!-- Page Numbers -->
+                    @{
+                        var startPage = Math.Max(1, currentPage - 2);
+                        var endPage = Math.Min(totalPages, currentPage + 2);
+                    }
+
+                    @if (startPage > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">1</a>
+                        </li>
+                        @if (startPage > 2)
+                        {
+                            <li class="page-item disabled">
+                                <span class="page-link">...</span>
+                            </li>
+                        }
+                    }
+
+                    @for (int i = startPage; i <= endPage; i++)
+                    {
+                        <li class="page-item @(i == currentPage ? "active" : "")">
+                            <a class="page-link fw-bold @(i == currentPage ? "bg-primary text-white border-primary shadow" : "")"
+                               href="?page=@i@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">@i</a>
+                        </li>
+                    }
+
+                    @if (endPage < totalPages)
+                    {
+                        @if (endPage < totalPages - 1)
+                        {
+                            <li class="page-item disabled">
+                                <span class="page-link">...</span>
+                            </li>
+                        }
+                        <li class="page-item">
+                            <a class="page-link" href="?page=@totalPages@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">@totalPages</a>
+                        </li>
+                    }
+
+                    <!-- Next -->
+                    @if (currentPage < totalPages)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?page=@(currentPage + 1)@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-end" href="?page=@totalPages@(string.IsNullOrEmpty(queryString) ? "" : "&" + queryString)">
+                                Cuối <i class="fas fa-angle-double-right ms-1"></i>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+            <!-- Info -->
+            <div class="text-center mt-3">
+                <small class="text-muted">
+                    Trang <strong>@currentPage</strong> / <strong>@totalPages</strong>
+                    <i class="fas fa-info-circle ms-1"></i>
+                </small>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center mt-4 py-4">
+        <small class="text-muted">Không cần phân trang</small>
+    </div>
+}

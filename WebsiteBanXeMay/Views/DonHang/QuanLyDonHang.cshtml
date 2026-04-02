@@ -1,0 +1,170 @@
+﻿@model List<DonHang>
+<form id="anti-forgery" style="display: none;">
+    @Html.AntiForgeryToken()
+</form>
+@{
+    ViewData["Title"] = "Quản lý đơn hàng";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/DonHang.css" asp-append-version="true" />
+}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold text-primary">
+        <i class="fas fa-shopping-bag me-2"></i>Quản lý đơn hàng
+    </h2>
+    <a href="#" class="btn btn-info" onclick="loadStats()">
+        <i class="fas fa-chart-bar me-1"></i>Thống kê
+    </a>
+</div>
+
+<!-- FILTER -->
+<div class="card search-filter-card shadow-lg mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-3">
+                <input type="text" name="tuKhoa" class="form-control"
+                       placeholder="🔍 Tên KH/Mã ĐH" value="@ViewBag.TuKhoa">
+            </div>
+            <div class="col-md-2">
+                <select name="trangThai" class="form-select">
+                    <option value="">Tất cả</option>
+                    <option value="Chờ xử lý" selected="@(ViewBag.TrangThai == "Chờ xử lý")">⏳ Chờ xử lý</option>
+                    <option value="Đang giao" selected="@(ViewBag.TrangThai == "Đang giao")">🚚 Đang giao</option>
+                    <option value="Đã giao" selected="@(ViewBag.TrangThai == "Đã giao")">✅ Đã giao</option>
+                    <option value="Hủy" selected="@(ViewBag.TrangThai == "Hủy")">❌ Hủy</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-search"></i> Tìm
+                </button>
+            </div>
+            <div class="col-md-2">
+                <a asp-action="QuanLyDonHang" class="btn btn-outline-secondary w-100">
+                    <i class="fas fa-refresh"></i> Reset
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- TABLE -->
+<div class="card shadow-xl">
+    <div class="card-header bg-gradient-primary text-white p-4">
+        <div class="row align-items-center">
+            <div class="col">
+                <h5 class="mb-0 fw-bold">
+                    <i class="fas fa-list me-2"></i>@Model.Count() đơn hàng
+                </h5>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-success fs-6 px-4 py-2 fw-bold">
+                    💰 @((ViewBag.TongDoanhThu ?? 0).ToString("N0"))đ
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-donhang table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th width="80">Mã ĐH</th>
+                        <th width="180">Khách hàng</th>
+                        <th width="120">Ngày đặt</th>
+                        <th width="120">Tổng tiền</th>
+                        <th width="250">Sản phẩm</th>
+                        <th width="120">Trạng thái</th>
+                        <th width="180">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var dh in Model)
+                    {
+                        <tr data-dh="@dh.MaDonHang">
+                            <td><span class="badge bg-primary fs-6">#@dh.MaDonHang</span></td>
+                            <td>
+                                <strong>@dh.TaiKhoan?.HoTen</strong>
+                                <br><small>@dh.SoDienThoai</small>
+                            </td>
+                            <td>@dh.NgayDat.ToString("dd/MM HH:mm")</td>
+                            <td>
+                                <strong class="text-success">@((dh.TongTien ?? 0).ToString("N0"))đ</strong>
+                            </td>
+                            <td>
+                                @foreach (var ct in dh.ChiTietDonHangs!.Take(2))
+                                {
+                                    <div class="mb-1 small">
+                                        <i class="fas fa-motorcycle text-warning me-1"></i>
+                                        @ct.SanPham?.TenSanPham (@ct.SoLuong)
+                                    </div>
+                                }
+                                @if (dh.ChiTietDonHangs!.Count > 2)
+                                {
+                                    <small class="text-muted">+@(dh.ChiTietDonHangs.Count - 2)</small>
+                                }
+                            </td>
+                            <td>
+                                @{
+                                    var trangThaiClass = dh.TrangThai?.Trim()?.ToLower()?.Replace(" ", "-")?.Replace("đã-giao", "da-giao") ?? "cho-xu-ly";
+                                }
+                                <span class="badge trạng-thái-@trangThaiClass fs-6 px-3 py-2 fw-bold badge-trangthai">
+                                    @(dh.TrangThai ?? "Chờ xử lý")
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a asp-action="ChiTiet" asp-route-id="@dh.MaDonHang"
+                                       class="btn btn-outline-primary" title="Chi tiết">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <button class="btn btn-outline-success btn-capnhat"
+                                            data-id="@dh.MaDonHang" data-trangthai="Đang giao" title="Giao">
+                                        <i class="fas fa-truck"></i>
+                                    </button>
+                                    <button class="btn btn-outline-warning btn-capnhat"
+                                            data-id="@dh.MaDonHang" data-trangthai="Đã giao" title="Hoàn thành">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-capnhat"
+                                            data-id="@dh.MaDonHang" data-trangthai="Hủy" title="Hủy">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- THÊM PHÂN TRANG Ở ĐÂY -->
+        @if (ViewBag.TotalPages > 1)
+        {
+            @await Html.PartialAsync("_Pagination", new {
+            currentPage = ViewBag.CurrentPage,
+                totalPages = ViewBag.TotalPages
+                })
+                }
+</div>
+@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/js/DonHang.js" asp-append-version="true"></script>
+
+        <script>
+            $(document).ready(function() {
+                console.log('📄 View Ready');
+
+                // ✅ CHỈ TEST COUNT - KHÔNG AUTO CLICK
+                setTimeout(function() {
+                    const btnCount = $('.btn-capnhat').length;
+                    console.log(`🎯 Found ${btnCount} buttons`);
+
+                    if (btnCount > 0) {
+                        console.log('✅ Buttons ready - READY TO CLICK!');
+                    } else {
+                        console.error('❌ No buttons found!');
+                    }
+                }, 2000);
+            });
+        </script>
+}

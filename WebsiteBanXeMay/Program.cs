@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanXeMay.Data;
 using System.Text.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Services
+// 🔥 SERVICES
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -18,22 +19,29 @@ builder.Services.AddSession(options =>
     options.Cookie.SameSite = SameSiteMode.Strict;
 });
 
+// 🔥 AUTHENTICATION
+builder.Services.AddAuthentication("CookieAuth")
+    .AddCookie("CookieAuth", options => {
+        options.LoginPath = "/TaiKhoan/DangNhap";
+        options.AccessDeniedPath = "/Home/TruyCapBiChan";
+    });
+
 var app = builder.Build();
 
-// 🔥 PIPELINE ĐÚNG THỨ TỰ
+// 🔥 PIPELINE - THỨ TỰ CHÍNH XÁC ⭐
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
-// ✅ THỨ TỰ QUAN TRỌNG!
 app.UseHttpsRedirection();
-app.UseStaticFiles();  // 🔥 CHỈ 1 LẦN - TRƯỚC UseRouting()
+app.UseStaticFiles();
 app.UseRouting();
 
-app.UseSession();      // ✅ Session sau Routing
-app.UseAuthorization();
+app.UseSession();        // 1. Session
+app.UseAuthentication(); // 2. Authentication ⭐ SAU Session, TRƯỚC Authorization ⭐
+app.UseAuthorization();  // 3. Authorization
 
 app.MapControllerRoute(
     name: "default",

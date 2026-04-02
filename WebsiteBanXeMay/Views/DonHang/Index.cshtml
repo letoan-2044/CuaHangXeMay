@@ -1,0 +1,132 @@
+﻿@model List<DonHang>
+<form id="anti-forgery" style="display: none;">
+    @Html.AntiForgeryToken()
+</form>
+@{
+    ViewData["Title"] = "Lịch sử đơn hàng";
+}
+
+<div class="donhang-container py-5">
+    <div class="container">
+        <!-- HEADER -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold text-primary mb-0">
+                        <i class="fas fa-history me-3 text-warning"></i>
+                        Lịch sử đơn hàng
+                    </h2>
+                    <span class="badge bg-success fs-5 px-4 py-2">@Model.Count() đơn</span>
+                </div>
+
+                <!-- FILTER -->
+                <div class="card search-filter-card shadow-lg mb-4">
+                    <div class="card-body">
+                        <form method="get" class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Trạng thái</label>
+                                <select name="trangThai" class="form-select">
+                                    <option value="">👇 Tất cả</option>
+                                    <option value="Chờ xử lý" selected="@(ViewBag.TrangThai?.ToString() == "Chờ xử lý")">⏳ Chờ xử lý</option>
+                                    <option value="Đang giao" selected="@(ViewBag.TrangThai == "Đang giao")">🚚 Đang giao</option>
+                                    <option value="Đã giao" selected="@(ViewBag.TrangThai == "Đã giao")">✅ Đã giao</option>
+                                    <option value="Hủy" selected="@(ViewBag.TrangThai == "Hủy")">❌ Hủy</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary w-100 h-100">
+                                    <i class="fas fa-filter me-2"></i>Lọc ngay
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARDS -->
+        @if (Model.Any())
+        {
+            <div class="row g-4 mb-5">
+                @foreach (var dh in Model)
+                {
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="card donhang-card shadow-lg h-100" data-dh="@dh.MaDonHang">
+                            @{
+                                var trangThaiHeader = dh.TrangThai?.Trim()?.ToLower()?.Replace(" ", "-") ?? "cho-xu-ly";
+                            }
+                            <div class="donhang-card-header @trangThaiHeader">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-1 fw-bold">#@dh.MaDonHang</h5>
+                                        <small>@dh.NgayDat.ToString("dd/MM HH:mm")</small>
+                                    </div>
+                                    <span class="badge trạng-thái-@trangThaiHeader fs-6 px-3 py-2 fw-bold">
+                                        @dh.TrangThai
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="card-body py-4">
+                                <h6 class="fw-bold mb-3 text-primary">
+                                    <i class="fas fa-motorcycle me-2"></i>
+                                    @(dh.ChiTietDonHangs?.Count() ?? 0) xe
+                                </h6>
+                                @foreach (var ct in dh.ChiTietDonHangs!.Take(2))
+                                {
+                                    <div class="product-item">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light rounded-circle p-2 me-3 shadow-sm">
+                                                <i class="fas fa-motorcycle text-primary fs-6"></i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="fw-semibold small"></div>
+                                                <small class="text-muted">@ct.SoLuong x @((ct.GiaBan).ToString("N0"))đ</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                @if (dh.ChiTietDonHangs!.Count > 2)
+                                {
+                                    <div class="text-center text-muted py-2 small">
+                                        +@(dh.ChiTietDonHangs.Count - 2) xe khác
+                                    </div>
+                                }
+                            </div>
+
+                            <!-- FOOTER -->
+                            <div class="donhang-total card-footer">
+                                <div class="row align-items-center">
+                                    <div class="col-7">
+                                        <div class="h5 mb-0 fw-bold">@((dh.TongTien ?? 0).ToString("N0"))đ</div>
+                                        <small>@(dh.DiaChiGiaoHang?.Length > 25 ? dh.DiaChiGiaoHang.Substring(0, 25) + "..." : dh.DiaChiGiaoHang ?? "Chưa cập nhật")</small>
+                                    </div>
+                                    <div class="col-5 text-end">
+                                        <a asp-action="ChiTiet" asp-route-id="@dh.MaDonHang"
+                                           class="btn btn-light btn-sm fw-bold px-3 rounded-pill">
+                                            <i class="fas fa-eye me-1"></i>Chi tiết
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- PAGINATION -->
+            @await Html.PartialAsync("_Pagination", new { currentPage = ViewBag.CurrentPage, totalPages = ViewBag.TotalPages, query = Context.Request.Query })
+        }
+        else
+        {
+            <div class="text-center py-8 my-5">
+                <i class="fas fa-inbox fs-1 text-muted mb-4 opacity-50"></i>
+                <h4 class="text-muted mb-3">Chưa có đơn hàng</h4>
+                <a asp-controller="SanPham" asp-action="Index" class="btn btn-warning btn-lg px-5 fw-bold">
+                    🛒 Mua sắm ngay
+                </a>
+            </div>
+        }
+    </div>
+</div>
