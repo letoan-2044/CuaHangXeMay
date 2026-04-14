@@ -37,5 +37,9 @@ namespace WebsiteBanXeMay.Models
 
         [ForeignKey("MaChucVu")]
         public virtual ChucVu? ChucVu { get; set; }
+
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        [MaxLength(100)]
+        public string? Email { get; set; }
     }
 }

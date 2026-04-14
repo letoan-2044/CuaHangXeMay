@@ -13,5 +13,6 @@ namespace WebsiteBanXeMay.Models
         // Navigation
         public GioHang? GioHang { get; set; }
         public SanPham? SanPham { get; set; }
+        public decimal GiaBan { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebsiteBanXeMay.Data;
 using WebsiteBanXeMay.Models;
-
+using Newtonsoft.Json; 
 namespace WebsiteBanXeMay.Controllers
 {
     public class DonHangController : Controller
@@ -108,7 +108,8 @@ namespace WebsiteBanXeMay.Controllers
                 ChiTietGioHangs = donHang.ChiTietDonHangs.Select(ct => new ChiTietGioHang
                 {
                     SanPham = ct.SanPham,
-                    SoLuong = ct.SoLuong
+                    SoLuong = ct.SoLuong,
+                     GiaBan = ct.GiaBan
                 }).ToList(),
                 TongTien = donHang.ChiTietDonHangs.Sum(ct => ct.SoLuong * ct.GiaBan)
             };
@@ -170,6 +171,54 @@ namespace WebsiteBanXeMay.Controllers
             };
             return Json(stats);
         }
+        // 🔥 THÊM VÀO DonHangController.cs
+        [HttpGet]
+        [HttpGet]
+        public async Task<IActionResult> ThongKeDonHang()
+        {
+            var chucVu = HttpContext.Session.GetString("ChucVu");
+            if (chucVu != "Admin" && chucVu != "Nhân viên")
+                return Json(new { success = false, message = "❌ Không có quyền!" });
 
+            var query = _context.DonHangs.AsQueryable();
+
+            var tuKhoa = Request.Query["tuKhoa"].ToString();
+            var trangThai = Request.Query["trangThai"].ToString();
+
+            if (!string.IsNullOrEmpty(tuKhoa))
+                query = query.Where(d => d.MaDonHang.ToString().Contains(tuKhoa) || d.SoDienThoai.Contains(tuKhoa));
+
+            if (!string.IsNullOrEmpty(trangThai))
+                query = query.Where(d => d.TrangThai == trangThai);
+
+            var orders = await query
+                .Include(d => d.TaiKhoan)
+                .OrderByDescending(d => d.NgayDat)
+                .ToListAsync();
+
+            // 🔥 DOANH THU: CHỈ TÍNH ĐƠN KHÔNG HỦY
+            var doanhThu = orders
+                .Where(d => d.TrangThai != "Hủy")
+                .Sum(d => d.TongTien ?? 0);
+
+            var stats = new
+            {
+                totalOrders = orders.Count,
+                totalRevenue = doanhThu,  // ✅ ĐÚNG
+                statusCount = orders.GroupBy(d => d.TrangThai)
+                    .ToDictionary(g => g.Key ?? "Không xác định", g => g.Count()),
+                orders = orders.Select(o => new
+                {
+                    maDH = o.MaDonHang,
+                    tenKH = o.TaiKhoan?.HoTen ?? "N/A",
+                    sdt = o.SoDienThoai ?? "",
+                    ngayDat = o.NgayDat.ToString("dd/MM/yyyy HH:mm"),
+                    tongTien = o.TongTien ?? 0,
+                    trangThai = o.TrangThai ?? "Chờ xử lý"
+                }).ToList()
+            };
+
+            return Json(stats);
+        }
     }
 }

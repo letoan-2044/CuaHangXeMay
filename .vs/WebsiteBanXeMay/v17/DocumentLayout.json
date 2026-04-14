@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\ttck\\WebsiteBanXeMay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\taikhoan\\quanlytaikhoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\taikhoan\\quanlytaikhoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\sanpham\\quanlysanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\sanpham\\quanlysanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\donhang\\chitiet.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\donhang\\chitiet.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,60 +23,112 @@
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\giohang\\dathang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\giohang\\dathang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\viewmodels\\doimatkhauviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\viewmodels\\doimatkhauviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\viewmodels\\dathangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\viewmodels\\dathangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\taikhoancontrroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\controllers\\taikhoancontrroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\chitietgiohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\chitietgiohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\taikhoan\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\taikhoan\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\donhang\\quanlydonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\donhang\\quanlydonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\donhang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\donhang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\taikhoancontrroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\controllers\\taikhoancontrroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\giohang\\dathang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\giohang\\dathang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\taikhoan\\thongtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\taikhoan\\thongtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\taikhoan\\suathongtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\taikhoan\\suathongtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\wwwroot\\css\\thongtintk.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\wwwroot\\css\\thongtintk.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\viewmodels\\quanlytaikhoanviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\viewmodels\\quanlytaikhoanviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\taikhoan\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\taikhoan\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\wwwroot\\js\\donhang.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\wwwroot\\js\\donhang.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\wwwroot\\css\\donhang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\wwwroot\\css\\donhang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\wwwroot\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\wwwroot\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\_pagination.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\_pagination.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\viewmodels\\doimatkhauviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\viewmodels\\doimatkhauviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\viewmodels\\dangnhapviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,16 +151,8 @@
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\sanpham\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\sanpham\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -115,20 +163,8 @@
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\wwwroot\\js\\giohang.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\wwwroot\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\wwwroot\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -157,10 +193,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\menuuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\menuuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\models\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -222,16 +254,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebsiteBanXeMay\\Migrations\\20260324123731_InitialCreate_New.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\websitebanxemay.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\websitebanxemay.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\views\\home\\testdb.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\views\\home\\testdb.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324015701_InitDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -248,18 +272,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\migrations\\20260324132007_initialcreate_fullseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\migrations\\20260324132007_initialcreate_fullseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\migrations\\20260325012659_initial_perfect_final.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\migrations\\20260325012659_initial_perfect_final.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|d:\\ttck\\websitebanxemay\\websitebanxemay\\migrations\\20260325004018_final_fix_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{249D0D42-2BED-453E-9C2F-AD4C73DD5415}|WebsiteBanXeMay\\WebsiteBanXeMay.csproj|solutionrelative:websitebanxemay\\migrations\\20260325004018_final_fix_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -269,199 +281,212 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatHang.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAUwBgBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T09:13:54.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DoiMatKhauViewModel.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\TaiKhoan.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\TaiKhoan.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\TaiKhoan.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA+wB8AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T08:20:05.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
-              "ViewState": "AgIAACgBAAAAAAAAAAAUwD8BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-01T09:24:54.568Z",
+              "WhenOpened": "2026-03-24T07:36:13.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ChiTiet.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\DonHang\\ChiTiet.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\DonHang\\ChiTiet.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\DonHang\\ChiTiet.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\DonHang\\ChiTiet.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAwF8AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T15:13:08.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GioHangController.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\GioHangController.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\GioHangController.cs",
               "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\GioHangController.cs",
               "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\GioHangController.cs",
-              "ViewState": "AgIAAFEBAAAAAAAAAAAAAFcBAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAqwIYBAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-01T09:25:52.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SanPhamController.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\SanPhamController.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\SanPhamController.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\SanPhamController.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\SanPhamController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAjwFcAAAB1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T00:59:50.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QuanLySanPham.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\QuanLySanPham.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\QuanLySanPham.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\QuanLySanPham.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\QuanLySanPham.cshtml",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAUwIkAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T04:54:03.304Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DonHangController.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\DonHangController.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\DonHangController.cs",
               "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\DonHangController.cs",
               "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\DonHangController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAEwAkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAkwGwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-02T11:21:04.084Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DatHangViewModel.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DatHangViewModel.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DatHangViewModel.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DatHangViewModel.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DatHangViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GioHang.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\GioHang.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\GioHang.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\GioHang.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\GioHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T08:52:07.19Z",
+              "WhenOpened": "2026-03-24T01:34:39.31Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ChiTietDonHang.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAswA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T01:35:15.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TaiKhoanContrroller.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
-              "ViewState": "AgIAAGkBAAAAAAAAAAAUwF0BAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T07:49:44.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "ChiTietGioHang.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChiTietGioHang.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ChiTietGioHang.cs",
               "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChiTietGioHang.cs",
               "RelativeToolTip": "WebsiteBanXeMay\\Models\\ChiTietGioHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T01:34:50.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DonHang.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\DonHang.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\DonHang.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\DonHang.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\DonHang.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAowBYAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "QuanLyTaiKhoan.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\QuanLyTaiKhoan.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\QuanLyTaiKhoan.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\QuanLyTaiKhoan.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\QuanLyTaiKhoan.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAkwCwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-03T04:41:13.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\SanPham.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\SanPham.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\SanPham.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\SanPham.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA6wBIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T01:35:04.582Z",
+              "WhenOpened": "2026-03-24T01:33:57.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAUwHIAAAAVAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\DonHang\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\DonHang\\Index.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\DonHang\\Index.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\DonHang\\Index.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAQwIMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T01:19:23.179Z",
+              "WhenOpened": "2026-04-02T13:14:10.111Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DangNhap.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAUwGoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "QuanLyDonHang.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\DonHang\\QuanLyDonHang.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\DonHang\\QuanLyDonHang.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\DonHang\\QuanLyDonHang.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\DonHang\\QuanLyDonHang.cshtml",
+              "ViewState": "AgIAAAMBAAAAAAAAAAAqwA8BAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-24T08:57:16.919Z",
+              "WhenOpened": "2026-04-14T03:47:54.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TaiKhoanContrroller.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\TaiKhoanContrroller.cs",
+              "ViewState": "AgIAAKwCAAAAAAAAAAAQwMMCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T07:49:44.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T03:05:27.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ChiTietDonHang.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ChiTietDonHang.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T01:35:15.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DatHang.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\GioHang\\DatHang.cshtml",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAQwBgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T09:13:54.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\DonHang.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\DonHang.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\DonHang.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\DonHang.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T03:13:48.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "WebsiteBanXeMay\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAALQAAAAAAAAAAAAlwL4AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAAkwMEAAADTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-24T03:24:47.894Z",
               "EditorCaption": ""
@@ -469,318 +494,131 @@
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAUwMwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T10:06:52.519Z",
+              "Title": "ThongTin.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\ThongTin.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\ThongTin.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\ThongTin.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\ThongTin.cshtml",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAswH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-14T01:52:51.376Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "GioHang.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\GioHang.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\GioHang.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\GioHang.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\GioHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T01:34:39.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TaiKhoan.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\TaiKhoan.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\TaiKhoan.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\TaiKhoan.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\TaiKhoan.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T07:36:13.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DangNhapViewModels.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T08:41:17.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DangKiViewModels.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T07:41:14.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "DoiMatKhau.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAUwFUAAAAQAAAAAAAAAA==",
+              "Title": "SuaThongTin.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\SuaThongTin.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\SuaThongTin.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\SuaThongTin.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\SuaThongTin.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T08:27:59.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T01:19:49.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T05:52:02.541Z",
+              "WhenOpened": "2026-04-14T02:02:32.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAswMYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T10:06:52.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ThongTinTk.css",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\ThongTinTk.css",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\ThongTinTk.css",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\ThongTinTk.css",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\ThongTinTk.css",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAQwMkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-14T02:05:55.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "QuanLyTaiKhoanViewModel.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\QuanLyTaiKhoanViewModel.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\QuanLyTaiKhoanViewModel.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\QuanLyTaiKhoanViewModel.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\QuanLyTaiKhoanViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T04:43:36.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DangNhap.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\DangNhap.cshtml",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAswGoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-24T00:40:27.917Z",
+              "WhenOpened": "2026-03-24T08:57:16.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-01T08:28:16.217Z",
-              "EditorCaption": ""
+              "Title": "DonHang.js",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\DonHang.js",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\DonHang.js",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\DonHang.js",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\js\\DonHang.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-02T13:14:48.764Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAUwIQAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T05:53:13.32Z",
-              "EditorCaption": ""
+              "Title": "DonHang.css",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\DonHang.css",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\DonHang.css",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\DonHang.css",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\DonHang.css",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAIwAQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-02T13:14:38.149Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "SanPham.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\SanPham.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\SanPham.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\SanPham.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Models\\SanPham.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T01:33:57.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAzwCQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T05:50:23.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "giohang.js",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
-              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAUwGQAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-01T09:52:19.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 24,
               "Title": "giohang.css",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\giohang.css",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\giohang.css",
               "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\giohang.css",
               "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\giohang.css",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAIwJMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-04-01T09:52:29.55Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SessionExtensions.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T08:30:50.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Program.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Program.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Program.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:40:20.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAEsBAAAAAAAAAAAIwGMBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-24T06:56:47.551Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 25,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\GioHang\\Index.cshtml",
+              "ViewState": "AgIAACgBAAAAAAAAAAAUwD8BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T03:11:52.512Z"
+              "WhenOpened": "2026-04-02T15:11:49.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ThemSanPham.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAUwKwAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T07:07:15.427Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "SuaSanPham.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAkwKsAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T07:09:04.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "sanpham.css",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
-              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
-              "ViewState": "AgIAAAsAAAAAAAAAAAD4vxcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-25T01:18:15.921Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "admin.css",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\admin.css",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\admin.css",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\admin.css",
-              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\admin.css",
-              "ViewState": "AgIAAJgBAAAAAAAAAAAIwLABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-25T05:32:09.115Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "admin.js",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\admin.js",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\admin.js",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\admin.js",
-              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\js\\admin.js",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAUwOUAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-25T05:32:17.718Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "menuUser.cshtml",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
-              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAUwGYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T00:49:21.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 27,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -792,7 +630,271 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Pagination.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_Pagination.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Shared\\_Pagination.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\_Pagination.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Shared\\_Pagination.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAuwHIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T14:01:29.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Program.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Program.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Program.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwDYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T00:40:20.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T05:52:02.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "DoiMatKhauViewModel.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DoiMatKhauViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T08:20:05.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\Index.cshtml",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAUwHIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T01:19:23.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DangNhapViewModels.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DangNhapViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T08:41:17.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DangKiViewModels.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Models\\ViewModels\\DangKiViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T07:41:14.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DoiMatKhau.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\TaiKhoan\\DoiMatKhau.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAUwFUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T08:27:59.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\Details.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T01:19:49.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-24T00:40:27.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-01T08:28:16.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAzwCQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T05:50:23.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "giohang.js",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\js\\giohang.js",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAUwGQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-01T09:52:19.37Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 40,
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
+              "RelativeToolTip": "WebsiteBanXeMay\\Extensions\\SessionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T08:30:50.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAIwGMBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-24T06:56:47.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T03:11:52.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ThemSanPham.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\ThemSanPham.cshtml",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAUwKwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T07:07:15.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "SuaSanPham.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\SanPham\\SuaSanPham.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAkwKsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T07:09:04.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "sanpham.css",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\sanpham.css",
+              "ViewState": "AgIAAAsAAAAAAAAAAAD4vxcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-25T01:18:15.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "admin.css",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\admin.css",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\admin.css",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\admin.css",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\css\\admin.css",
+              "ViewState": "AgIAAJgBAAAAAAAAAAAIwLABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-25T05:32:09.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "admin.js",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\admin.js",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\admin.js",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\admin.js",
+              "RelativeToolTip": "WebsiteBanXeMay\\wwwroot\\js\\admin.js",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAUwOUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-25T05:32:17.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "menuUser.cshtml",
+              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
+              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
+              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
+              "RelativeToolTip": "WebsiteBanXeMay\\Views\\Shared\\menuUser.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwGYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-25T00:49:21.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
               "Title": "DanhMuc.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\DanhMuc.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\DanhMuc.cs",
@@ -804,7 +906,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 51,
               "Title": "dangnhap.js",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\dangnhap.js",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\dangnhap.js",
@@ -816,7 +918,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 50,
               "Title": "dangnhap.css",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\dangnhap.css",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\dangnhap.css",
@@ -828,7 +930,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 52,
               "Title": "DangKi.cshtml",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\TaiKhoan\\DangKi.cshtml",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\TaiKhoan\\DangKi.cshtml",
@@ -840,7 +942,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 53,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\appsettings.json",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\appsettings.json",
@@ -852,7 +954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 54,
               "Title": "dangki.css",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\css\\dangki.css",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\css\\dangki.css",
@@ -864,7 +966,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 56,
               "Title": "ChucVu.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ChucVu.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ChucVu.cs",
@@ -876,7 +978,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 55,
               "Title": "sanpham.js",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\sanpham.js",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\sanpham.js",
@@ -888,19 +990,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "20260325012659_Initial_Perfect_Final.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260325012659_Initial_Perfect_Final.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260325012659_Initial_Perfect_Final.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260325012659_Initial_Perfect_Final.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Migrations\\20260325012659_Initial_Perfect_Final.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T01:26:59.423Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 57,
               "Title": "dangki.js",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\wwwroot\\js\\dangki.js",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\wwwroot\\js\\dangki.js",
@@ -912,19 +1002,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "20260325004018_Final_Fix_Login.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260325004018_Final_Fix_Login.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260325004018_Final_Fix_Login.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260325004018_Final_Fix_Login.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Migrations\\20260325004018_Final_Fix_Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T00:40:18.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 59,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -934,7 +1012,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 58,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Properties\\launchSettings.json",
@@ -946,7 +1024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 60,
               "Title": "20260324130456_InitialCreate_FullModels.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324130456_InitialCreate_FullModels.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260324130456_InitialCreate_FullModels.cs",
@@ -958,19 +1036,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "20260324132007_InitialCreate_FullSeed.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324132007_InitialCreate_FullSeed.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260324132007_InitialCreate_FullSeed.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324132007_InitialCreate_FullSeed.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Migrations\\20260324132007_InitialCreate_FullSeed.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T13:20:07.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 61,
               "Title": "20260324125036_AddDefaultMaChucVu.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324125036_AddDefaultMaChucVu.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260324125036_AddDefaultMaChucVu.cs",
@@ -982,19 +1048,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "WebsiteBanXeMay.csproj",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\WebsiteBanXeMay.csproj",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\WebsiteBanXeMay.csproj",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\WebsiteBanXeMay.csproj",
-              "RelativeToolTip": "WebsiteBanXeMay\\WebsiteBanXeMay.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-24T12:25:56.312Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 62,
               "Title": "20260324123731_InitialCreate_New.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324123731_InitialCreate_New.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260324123731_InitialCreate_New.cs",
@@ -1006,7 +1060,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 63,
               "Title": "TestDb.cshtml",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Views\\Home\\TestDb.cshtml",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Views\\Home\\TestDb.cshtml",
@@ -1018,19 +1072,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebsiteBanXeMay\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebsiteBanXeMay\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAUwFYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T03:05:27.08Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 64,
               "Title": "20260324015701_InitDatabase.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324015701_InitDatabase.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260324015701_InitDatabase.cs",
@@ -1042,7 +1084,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 65,
               "Title": "20260324015420_InitDatabase.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Migrations\\20260324015420_InitDatabase.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Migrations\\20260324015420_InitDatabase.cs",
@@ -1054,7 +1096,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 66,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\Models\\ErrorViewModel.cs",
@@ -1066,7 +1108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 67,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\ttck\\WebsiteBanXeMay\\WebsiteBanXeMay\\appsettings.Development.json",
               "RelativeDocumentMoniker": "WebsiteBanXeMay\\appsettings.Development.json",

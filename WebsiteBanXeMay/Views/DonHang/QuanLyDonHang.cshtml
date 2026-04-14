@@ -12,7 +12,7 @@
     <h2 class="fw-bold text-primary">
         <i class="fas fa-shopping-bag me-2"></i>Quản lý đơn hàng
     </h2>
-    <a href="#" class="btn btn-info" onclick="loadStats()">
+    <a href="#" class="btn btn-info btn-stats" onclick="donHangManager.loadStats(); return false;">
         <i class="fas fa-chart-bar me-1"></i>Thống kê
     </a>
 </div>
@@ -53,7 +53,7 @@
     <div class="card-header bg-gradient-primary text-white p-4">
         <div class="row align-items-center">
             <div class="col">
-                <h5 class="mb-0 fw-bold">
+                <h5 class="mb-0 fw-bold text-dark">
                     <i class="fas fa-list me-2"></i>@Model.Count() đơn hàng
                 </h5>
             </div>
@@ -137,6 +137,118 @@
                 </tbody>
             </table>
         </div>
+        <!-- MODAL THỐNG KÊ -->
+        <div class="modal fade" id="statsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header bg-gradient-primary text-white">
+                        <h5 class="modal-title">
+                            <i class="fas fa-chart-bar me-2"></i>Thống kê đơn hàng
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <div class="card bg-primary text-white h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-shopping-bag fa-3x mb-3 opacity-75"></i>
+                                        <h3 id="totalOrders" class="mb-1">0</h3>
+                                        <p class="mb-0">Tổng đơn</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-success text-white h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-dollar-sign fa-3x mb-3 opacity-75"></i>
+                                        <h3 id="totalRevenue" class="mb-1">0đ</h3>
+                                        <p class="mb-0">Doanh thu</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-warning text-white h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-clock fa-3x mb-3 opacity-75"></i>
+                                        <h3 id="pendingOrders" class="mb-1">0</h3>
+                                        <p class="mb-0">Chờ xử lý</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-info text-white h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-check-circle fa-3x mb-3 opacity-75"></i>
+                                        <h3 id="completedOrders" class="mb-1">0</h3>
+                                        <p class="mb-0">Đã hoàn thành</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="chartStatus"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="chartRevenue"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="row text-center">
+                                <div class="col-md-3">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body">
+                                            <h6>🚚 Đang giao</h6>
+                                            <h4 id="shippingOrders" class="text-info mb-0">0</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body">
+                                            <h6>❌ Hủy</h6>
+                                            <h4 id="cancelledOrders" class="text-danger mb-0">0</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body">
+                                            <h6>💰 TB đơn hàng</h6>
+                                            <h4 id="avgOrder" class="text-success mb-0">0đ</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body">
+                                            <h6>📊 Tỷ lệ hoàn thành</h6>
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <h4 id="completionRate" class="text-primary mb-0 me-2">0%</h4>
+                                                <div class="progress" style="width: 60px; height: 20px;">
+                                                    <div class="progress-bar bg-primary" id="completionBar" style="width: 0%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="donHangManager.exportStats()">
+                            <i class="fas fa-download me-1"></i>Xuất Excel
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Đóng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- THÊM PHÂN TRANG Ở ĐÂY -->
         @if (ViewBag.TotalPages > 1)
         {
@@ -148,23 +260,23 @@
 </div>
 @section Scripts {
         <partial name="_ValidationScriptsPartial" />
+
+        <!-- ✅ Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <!-- 🔥 DONHANG.JS V3.0 - FULL FEATURES -->
         <script src="~/js/DonHang.js" asp-append-version="true"></script>
 
         <script>
             $(document).ready(function() {
-                console.log('📄 View Ready');
+                console.log('🚀 DonHang View + V3.0 READY!');
 
-                // ✅ CHỈ TEST COUNT - KHÔNG AUTO CLICK
-                setTimeout(function() {
-                    const btnCount = $('.btn-capnhat').length;
-                    console.log(`🎯 Found ${btnCount} buttons`);
-
-                    if (btnCount > 0) {
-                        console.log('✅ Buttons ready - READY TO CLICK!');
-                    } else {
-                        console.error('❌ No buttons found!');
-                    }
-                }, 2000);
+                // ✅ Test DonHangManager
+                if (typeof window.donHangManager !== 'undefined') {
+                    console.log('✅ DonHangManager V3.0 LOADED!');
+                }
             });
         </script>
 }

@@ -58,7 +58,14 @@
                                 <a asp-controller="SanPham" asp-action="Index" class="btn btn-primary w-100 mb-2">
                                     <i class="fas fa-shopping-bag me-2"></i>Mua tiếp
                                 </a>
-                                <button class="btn btn-outline-secondary w-100">In hóa đơn</button>
+                                <button class="btn btn-outline-primary w-100 print-invoice-btn"
+                                        data-ma-don-hang="@Model.DonHang.MaDonHang"
+                                        data-so-dien-thoai="@Model.DonHang.SoDienThoai"
+                                        data-dia-chi="@Model.DonHang.DiaChiGiaoHang"
+                                        data-trang-thai="@Model.DonHang.TrangThai"
+                                        data-tong-tien="@Model.TongTien">
+                                    <i class="fas fa-print me-2"></i>In hóa đơn
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -86,7 +93,7 @@
                                 </div>
                                 <div class="col-md-3 text-end">
                                     <h5 class="fw-bold text-success">
-                                        @((ct.SoLuong * (ct.SanPham?.Gia ?? 0)).ToString("N0")) VNĐ
+                                        <h5>@((ct.SoLuong * ct.GiaBan).ToString("N0")) VNĐ</h5> 
                                     </h5>
                                 </div>
                             </div>
@@ -96,4 +103,34 @@
             }
         </div>
     </div>
+   <!-- ✅ GIỮ SCRIPT NÀY - CUỐI FILE -->
+<script>
+    const chiTietGioHangs = @Html.Raw(Json.Serialize(Model.ChiTietGioHangs.Select(ct => new {
+    tenSanPham = ct.SanPham?.TenSanPham,
+    maSanPham = ct.SanPham?.MaSanPham,
+    gia = ct.GiaBan,  // ✅ GiaBan thay vì ct.SanPham.Gia
+    soLuong = ct.SoLuong
+})));
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.print-invoice-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                printInvoice(
+                    this.dataset.maDonHang,
+                    {
+                        soDienThoai: this.dataset.soDienThoai,
+                        diaChi: this.dataset.diaChi,
+                        trangThai: this.dataset.trangThai,
+                        tongTien: parseFloat(this.dataset.tongTien)
+                    },
+                    chiTietGioHangs
+                );
+            });
+        });
+    });
+</script>
+
+@section Scripts {
+    <script src="~/js/print-invoice.js"></script>
+}
 </div>

@@ -150,20 +150,38 @@ namespace WebsiteBanXeMay.Controllers
                 _logger.LogInformation("🔍 Tìm user - TenDangNhap: {TenDangNhap}, HashedPass: {HashedPass}",
                     tenDangNhap, hashedMatKhau[..16] + "...");
 
+                // 🔥 BƯỚC 1: TÌM USER THEO TÊN ĐĂNG NHẬP (KHÔNG KIỂM TRA MẬT KHẨU)
                 var user = await _context.TaiKhoans
                     .Include(t => t.ChucVu)
-                    .FirstOrDefaultAsync(t =>
-                        t.TenDangNhap == tenDangNhap &&
-                        t.MatKhau == hashedMatKhau &&
-                        t.TrangThai == true);
+                    .FirstOrDefaultAsync(t => t.TenDangNhap == tenDangNhap);
 
                 if (user == null)
                 {
-                    _logger.LogWarning("❌ Đăng nhập thất bại - Không tìm thấy user hợp lệ: {TenDangNhap}", tenDangNhap);
-                    ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng!");
+                    _logger.LogWarning("❌ Đăng nhập thất bại - Không tìm thấy user: {TenDangNhap}", tenDangNhap);
+                    ModelState.AddModelError("", "👤 Tên đăng nhập hoặc mật khẩu không đúng!");
                     stopwatch.Stop();
                     return View(model);
                 }
+
+                // 🔥 TRƯỜNG HỢP 1: TÀI KHOẢN BỊ KHÓA
+                if (!user.TrangThai)
+                {
+                    _logger.LogWarning("🔒 Đăng nhập thất bại - Tài khoản bị khóa: {TenDangNhap}", tenDangNhap);
+                    ModelState.AddModelError("", "🚫 Tài khoản của bạn đã bị khóa! Vui lòng liên hệ quản trị viên.");
+                    stopwatch.Stop();
+                    return View(model);
+                }
+
+                // 🔥 TRƯỜNG HỢP 2: MẬT KHẨU SAI
+                if (user.MatKhau != hashedMatKhau)
+                {
+                    _logger.LogWarning("❌ Đăng nhập thất bại - Mật khẩu sai: {TenDangNhap}", tenDangNhap);
+                    ModelState.AddModelError("", "👤 Tên đăng nhập hoặc mật khẩu không đúng!");
+                    stopwatch.Stop();
+                    return View(model);
+                }
+
+                // ✅ ĐĂNG NHẬP THÀNH CÔNG (code cũ giữ nguyên)
 
                 // ✅ Lưu session - ChucVu sẽ load đúng
                 HttpContext.Session.SetInt32("MaTaiKhoan", user.MaTaiKhoan);
@@ -372,5 +390,319 @@ namespace WebsiteBanXeMay.Controllers
                 return View(new List<ChiTietGioHang>());
             }
         }
+        [HttpGet]
+        public async Task<IActionResult> QuanLyTaiKhoan(int page = 1, int pageSize = 10, string? search = null, int? trangThai = null)
+        {
+            _logger.LogInformation("🔍 QuanLyTaiKhoan - Page: {Page}, Search: {Search}, TrangThai: {TrangThai}",
+                page, search, trangThai);
+
+            var maChucVu = HttpContext.Session.GetInt32("MaChucVu") ?? 0;
+            if (maChucVu > 2)
+            {
+                TempData["error"] = "❌ Không có quyền truy cập!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // 🔥 QUERY DATABASE
+            var query = _context.TaiKhoans
+                .Include(t => t.ChucVu)
+                .AsQueryable();
+
+            // Tìm kiếm
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                var s = search.Trim().ToLower();
+                query = query.Where(t =>
+                    t.TenDangNhap.ToLower().Contains(s) ||
+                    (t.HoTen ?? "").ToLower().Contains(s) ||
+                    (t.SoDienThoai ?? "").Contains(s));
+            }
+
+            // Lọc trạng thái
+            if (trangThai.HasValue)
+                query = query.Where(t => t.TrangThai == (trangThai.Value == 1));
+
+            // 🔥 ĐẾM TỔNG
+            var totalItems = await query.CountAsync();
+            _logger.LogInformation("📊 Total items: {Total}", totalItems);
+
+            // 🔥 LẤY DỮ LIỆU PHÂN TRANG
+            var taiKhoans = await query
+                .OrderByDescending(t => t.MaTaiKhoan)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            _logger.LogInformation("✅ Loaded {Count} accounts for page {Page}", taiKhoans.Count, page);
+
+            // 🔥 TRUYỀN DATA VÀO VIEWBAG
+            ViewBag.TaiKhoans = taiKhoans;  
+            ViewBag.CurrentPage = page;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+            ViewBag.TotalItems = totalItems;
+            ViewBag.Search = search ?? "";
+            ViewBag.TrangThai = trangThai;
+
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleTrangThai(int maTaiKhoan)
+        {
+            var taiKhoan = await _context.TaiKhoans.FindAsync(maTaiKhoan);
+            if (taiKhoan == null) return Json(new { success = false });
+
+            taiKhoan.TrangThai = !taiKhoan.TrangThai;
+            await _context.SaveChangesAsync();
+
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> XoaTaiKhoan(int maTaiKhoan)
+        {
+            var taiKhoan = await _context.TaiKhoans.FindAsync(maTaiKhoan);
+            if (taiKhoan == null) return Json(new { success = false });
+
+            _context.TaiKhoans.Remove(taiKhoan);
+            await _context.SaveChangesAsync();
+
+            return Json(new { success = true });
+        }
+        [HttpGet]
+        public async Task<IActionResult> ThongTin(int id)
+        {
+            var maChucVu = HttpContext.Session.GetInt32("MaChucVu") ?? 0;
+            if (maChucVu > 2)
+            {
+                TempData["error"] = "❌ Không có quyền truy cập!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            var taiKhoan = await _context.TaiKhoans
+                .Include(t => t.ChucVu)
+                .FirstOrDefaultAsync(t => t.MaTaiKhoan == id);
+
+            if (taiKhoan == null)
+            {
+                TempData["error"] = "❌ Không tìm thấy tài khoản!";
+                return RedirectToAction("QuanLyTaiKhoan");
+            }
+
+            return View(taiKhoan);
+        }
+        // ----------------- SỬA THÔNG TIN TÀI KHOẢN -----------------
+        [HttpGet]
+        public async Task<IActionResult> SuaThongTin(int id)
+        {
+            _logger.LogInformation("✏️ GET SuaThongTin - ID: {Id}", id);
+
+            var maChucVu = HttpContext.Session.GetInt32("MaChucVu") ?? 0;
+            if (maChucVu > 2)
+            {
+                TempData["error"] = "❌ Không có quyền truy cập!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            var taiKhoan = await _context.TaiKhoans
+                .Include(t => t.ChucVu)
+                .FirstOrDefaultAsync(t => t.MaTaiKhoan == id);
+
+            if (taiKhoan == null)
+            {
+                TempData["error"] = "❌ Không tìm thấy tài khoản!";
+                return RedirectToAction("QuanLyTaiKhoan");
+            }
+
+            var model = new SuaThongTinViewModel
+            {
+                MaTaiKhoan = taiKhoan.MaTaiKhoan,
+                TenDangNhap = taiKhoan.TenDangNhap,
+                HoTen = taiKhoan.HoTen,
+                SoDienThoai = taiKhoan.SoDienThoai,
+                DiaChi = taiKhoan.DiaChi,
+                Email = taiKhoan.Email
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SuaThongTin(SuaThongTinViewModel model)
+        {
+            _logger.LogInformation("✏️ POST SuaThongTin - ID: {Id}", model.MaTaiKhoan);
+
+            var maChucVu = HttpContext.Session.GetInt32("MaChucVu") ?? 0;
+            if (maChucVu > 2)
+            {
+                TempData["error"] = "❌ Không có quyền truy cập!";
+                return RedirectToAction("QuanLyTaiKhoan");
+            }
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning("❌ ModelState invalid - {Errors}",
+                        string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)));
+                    return View(model);
+                }
+
+                var taiKhoan = await _context.TaiKhoans.FindAsync(model.MaTaiKhoan);
+                if (taiKhoan == null)
+                {
+                    TempData["error"] = "❌ Không tìm thấy tài khoản!";
+                    return RedirectToAction("QuanLyTaiKhoan");
+                }
+
+                // ✅ Cập nhật thông tin (TenDangNhap KHÔNG đổi được)
+                taiKhoan.HoTen = model.HoTen?.Trim();
+                taiKhoan.SoDienThoai = model.SoDienThoai?.Trim();
+                taiKhoan.DiaChi = model.DiaChi?.Trim();
+                taiKhoan.Email = model.Email?.Trim();
+
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("✅ Sửa thành công - ID: {Id}", model.MaTaiKhoan);
+
+                TempData["success"] = "✅ Cập nhật thông tin thành công!";
+                return RedirectToAction("ThongTin", new { id = model.MaTaiKhoan });
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "💥 Lỗi DB khi sửa - ID: {Id}", model.MaTaiKhoan);
+                ModelState.AddModelError("", "❌ Có lỗi cơ sở dữ liệu, vui lòng thử lại!");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "💥 Lỗi sửa thông tin - ID: {Id}", model.MaTaiKhoan);
+                ModelState.AddModelError("", "❌ Có lỗi xảy ra, vui lòng thử lại!");
+            }
+
+            return View(model);
+        }
+        // 🔥 THÔNG TIN CÁ NHÂN - KHÁCH HÀNG
+        [HttpGet]
+        public async Task<IActionResult> ThongTinCaNhan()
+        {
+            _logger.LogInformation("👤 ThongTinCaNhan - UserID: {MaTaiKhoan}",
+                HttpContext.Session.GetInt32("MaTaiKhoan"));
+
+            // Kiểm tra đăng nhập
+            var maTaiKhoan = HttpContext.Session.GetInt32("MaTaiKhoan");
+            if (maTaiKhoan == null || maTaiKhoan == 0)
+            {
+                TempData["error"] = "❌ Vui lòng đăng nhập để xem thông tin cá nhân!";
+                return RedirectToAction("DangNhap");
+            }
+
+            try
+            {
+                var taiKhoan = await _context.TaiKhoans
+                    .Include(t => t.ChucVu)
+                    .FirstOrDefaultAsync(t => t.MaTaiKhoan == maTaiKhoan.Value);
+
+                if (taiKhoan == null)
+                {
+                    _logger.LogWarning("❌ Không tìm thấy tài khoản trong session: {MaTaiKhoan}", maTaiKhoan);
+                    TempData["error"] = "❌ Thông tin tài khoản không hợp lệ!";
+                    return RedirectToAction("DangNhap");
+                }
+
+                _logger.LogInformation("✅ ThongTinCaNhan OK - User: {TenDangNhap}", taiKhoan.TenDangNhap);
+                return View(taiKhoan);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "💥 Lỗi ThongTinCaNhan - UserID: {MaTaiKhoan}", maTaiKhoan);
+                TempData["error"] = "❌ Có lỗi xảy ra, vui lòng thử lại!";
+                return RedirectToAction("DangNhap");
+            }
+        }
+
+        // 🔥 SỬA THÔNG TIN CÁ NHÂN - KHÁCH HÀNG
+        [HttpGet]
+        public async Task<IActionResult> SuaThongTinCaNhan()
+        {
+            _logger.LogInformation("✏️ SuaThongTinCaNhan - UserID: {MaTaiKhoan}",
+                HttpContext.Session.GetInt32("MaTaiKhoan"));
+
+            var maTaiKhoan = HttpContext.Session.GetInt32("MaTaiKhoan");
+            if (maTaiKhoan == null || maTaiKhoan == 0)
+            {
+                return RedirectToAction("DangNhap");
+            }
+
+            var taiKhoan = await _context.TaiKhoans
+                .FirstOrDefaultAsync(t => t.MaTaiKhoan == maTaiKhoan.Value);
+
+            if (taiKhoan == null) return RedirectToAction("DangNhap");
+
+            var model = new SuaThongTinViewModel
+            {
+                MaTaiKhoan = taiKhoan.MaTaiKhoan,
+                TenDangNhap = taiKhoan.TenDangNhap,
+                HoTen = taiKhoan.HoTen,
+                SoDienThoai = taiKhoan.SoDienThoai,
+                DiaChi = taiKhoan.DiaChi,
+                Email = taiKhoan.Email
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SuaThongTinCaNhan(SuaThongTinViewModel model)
+        {
+            _logger.LogInformation("✏️ POST SuaThongTinCaNhan - ID: {Id}", model.MaTaiKhoan);
+
+            var maTaiKhoanSession = HttpContext.Session.GetInt32("MaTaiKhoan");
+            if (maTaiKhoanSession != model.MaTaiKhoan)
+            {
+                TempData["error"] = "❌ Không có quyền chỉnh sửa tài khoản này!";
+                return RedirectToAction("ThongTinCaNhan");
+            }
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning("❌ ModelState invalid SuaThongTinCaNhan");
+                    return View(model);
+                }
+
+                var taiKhoan = await _context.TaiKhoans.FindAsync(model.MaTaiKhoan);
+                if (taiKhoan == null)
+                {
+                    TempData["error"] = "❌ Không tìm thấy tài khoản!";
+                    return RedirectToAction("ThongTinCaNhan");
+                }
+
+                // ✅ Cập nhật (không cho đổi TenDangNhap)
+                taiKhoan.HoTen = model.HoTen?.Trim();
+                taiKhoan.SoDienThoai = model.SoDienThoai?.Trim();
+                taiKhoan.DiaChi = model.DiaChi?.Trim();
+                taiKhoan.Email = model.Email?.Trim();
+
+                // Cập nhật session HoTen
+                HttpContext.Session.SetString("HoTen", taiKhoan.HoTen ?? "");
+
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("✅ SuaThongTinCaNhan thành công - ID: {Id}", model.MaTaiKhoan);
+
+                TempData["success"] = "✅ Cập nhật thông tin thành công!";
+                return RedirectToAction("ThongTinCaNhan");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "💥 Lỗi SuaThongTinCaNhan - ID: {Id}", model.MaTaiKhoan);
+                ModelState.AddModelError("", "❌ Có lỗi xảy ra, vui lòng thử lại!");
+                return View(model);
+            }
+        }
+
     }
 }

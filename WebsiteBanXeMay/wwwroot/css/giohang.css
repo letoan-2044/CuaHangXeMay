@@ -6,7 +6,7 @@
 .bg-gradient-primary h3,
 .bg-gradient-success h3,
 .bg-gradient-danger h3 {
-    color: #ffffff !important;
+    color: #212529 !important;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 

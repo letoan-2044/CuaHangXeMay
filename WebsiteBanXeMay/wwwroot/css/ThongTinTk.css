@@ -1,0 +1,201 @@
+﻿/* ========================================
+   ThongTinTk.css - Quản lý thông tin tài khoản
+   Author: Admin Dashboard
+   Version: 1.0
+======================================== */
+
+/* Avatar & Header */
+.avatar-container {
+    z-index: 10;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border: 8px solid white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    padding-top: 7.5rem !important; /* 🔥 FIX TEXT DÍNH AVATAR */
+    padding-bottom: 2.5rem;
+    position: relative;
+    overflow: visible;
+}
+
+    /* Text trong header */
+    .card-header h2 {
+        margin-top: 1.5rem !important;
+        font-size: 1.75rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .card-header p {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+/* Info Cards */
+.info-card {
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e9ecef;
+    border-radius: 1rem;
+    height: 100%;
+}
+
+    .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12) !important;
+        border-color: #dee2e6;
+    }
+
+/* Info Items */
+.info-item {
+    margin-bottom: 1.25rem;
+}
+
+    .info-item label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #6c757d;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .info-item div {
+        padding: 0.5rem 0;
+        min-height: 2.25rem;
+    }
+
+/* Badges */
+.badge {
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+}
+
+/* Alert Messages */
+.alert {
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+}
+
+    .alert i {
+        font-size: 1.2rem;
+    }
+
+/* Buttons */
+.btn {
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+    .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+/* Icons */
+.fas {
+    width: 1.2em;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .col-lg-8 {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .avatar {
+        width: 80px;
+        height: 80px;
+        border-width: 6px;
+    }
+
+    .card-header {
+        padding-top: 6rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+        }
+
+    .info-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-footer .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-footer {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding: 1rem;
+    }
+
+    .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+    .info-card:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+}

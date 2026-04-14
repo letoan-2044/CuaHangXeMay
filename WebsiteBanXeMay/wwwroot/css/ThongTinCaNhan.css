@@ -1,0 +1,108 @@
+﻿/* 🔥 THÔNG TIN CÁ NHÂN - PROFILE USER */
+.profile-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+    .profile-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+.avatar-large {
+    width: 140px;
+    height: 140px;
+    border: 6px solid rgba(255,255,255,0.9);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .avatar-large:hover {
+        transform: scale(1.05);
+    }
+
+.info-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none !important;
+    background: rgba(255,255,255,0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+    .info-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+    }
+
+.btn-action {
+    transition: all 0.3s ease;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    padding: 14px 24px !important;
+    border: none !important;
+}
+
+    .btn-action:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+    }
+
+.stats-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.info-row label {
+    font-size: 0.95rem;
+}
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 992px) {
+    .col-lg-7, .col-lg-5 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .avatar-large {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .profile-hero {
+        min-height: 350px !important;
+    }
+
+    .btn-action {
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-hero h1 {
+        font-size: 2rem !important;
+    }
+
+    .stats-card h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* 🔥 DARK MODE SUPPORT */
+@media (prefers-color-scheme: dark) {
+    .info-card {
+        background: rgba(30,30,40,0.95) !important;
+        color: #ffffff !important;
+    }
+}

@@ -5,6 +5,8 @@ wwwroot\css\DonHang.css
 wwwroot\css\giohang.css
 wwwroot\css\sanpham.css
 wwwroot\css\site.css
+wwwroot\css\ThongTinCaNhan.css
+wwwroot\css\ThongTinTk.css
 wwwroot\favicon.ico
 wwwroot\images\0e250172-7d60-4e57-bdd0-f7d8d6ca334f.png
 wwwroot\images\airblade.png
@@ -27,6 +29,7 @@ wwwroot\js\dangki.js
 wwwroot\js\dangnhap.js
 wwwroot\js\DonHang.js
 wwwroot\js\giohang.js
+wwwroot\js\print-invoice.js
 wwwroot\js\sanpham.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

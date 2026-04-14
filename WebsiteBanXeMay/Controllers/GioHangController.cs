@@ -341,29 +341,30 @@ namespace WebsiteBanXeMay.Controllers
                 TempData["Loi"] = "❌ Giỏ hàng không tồn tại!";
                 return RedirectToAction("Index");
             }
-            var cartItems = await _context.ChiTietGioHangs  
-    .Include(ct => ct.SanPham)
-    .Where(ct => ct.MaGioHang == checkoutCart.MaGioHang)
-    .ToListAsync();
-            var donHang = new DonHang
-            {
-                MaTaiKhoan = userId,
-                NgayDat = DateTime.Now,
-                TongTien = cartItems.Sum(ct => ct.SoLuong * ct.SanPham.Gia),  
-                DiaChiGiaoHang = model.DonHang.DiaChiGiaoHang,
-                SoDienThoai = model.DonHang.SoDienThoai,
-                TrangThai = "Chờ xử lý",
-                
-            };
 
-            _context.DonHangs.Add(donHang);
-            await _context.SaveChangesAsync();
-
+            // 🔥 LOAD CHI TIẾT GIỎ HÀNG
             var chiTietGioHangs = await _context.ChiTietGioHangs
                 .Include(ct => ct.SanPham)
                 .Where(ct => ct.MaGioHang == checkoutCart.MaGioHang)
                 .ToListAsync();
 
+            // 🔥 TÍNH snapshot giá LÚC MUA
+            var tongTien = chiTietGioHangs.Sum(ct => ct.SoLuong * ct.SanPham.Gia);
+
+            var donHang = new DonHang
+            {
+                MaTaiKhoan = userId,
+                NgayDat = DateTime.Now,
+                TongTien = tongTien,  // ✅ Giá lúc mua
+                DiaChiGiaoHang = model.DonHang.DiaChiGiaoHang,
+                SoDienThoai = model.DonHang.SoDienThoai,
+                TrangThai = "Chờ xử lý",
+            };
+
+            _context.DonHangs.Add(donHang);
+            await _context.SaveChangesAsync();
+
+            // 🔥 LƯU SNAPSHOT vào ChiTietDonHang
             foreach (var ctgh in chiTietGioHangs)
             {
                 _context.ChiTietDonHangs.Add(new ChiTietDonHang
@@ -371,14 +372,13 @@ namespace WebsiteBanXeMay.Controllers
                     MaDonHang = donHang.MaDonHang,
                     MaSanPham = ctgh.MaSanPham,
                     SoLuong = ctgh.SoLuong,
-                    GiaBan = ctgh.SanPham.Gia
+                    GiaBan = ctgh.SanPham.Gia  
                 });
 
-                // 🔥 Cập nhật tồn kho
                 ctgh.SanPham.SoLuongTon -= ctgh.SoLuong;
             }
 
-            // 🔥 XÓA TOÀN BỘ CHI TIẾT GIỎ HÀNG
+            // Xóa giỏ hàng
             _context.ChiTietGioHangs.RemoveRange(chiTietGioHangs);
             await _context.SaveChangesAsync();
 
@@ -388,7 +388,7 @@ namespace WebsiteBanXeMay.Controllers
             TempData["MaDonHang"] = donHang.MaDonHang.ToString();
             TempData["SoDienThoai"] = model.DonHang.SoDienThoai;
 
-            return RedirectToAction("Index"); // 🔥 QUAY VỀ GIỎ HÀNG thay vì ChiTiet
+            return RedirectToAction("Index"); 
         }
     }
 }
