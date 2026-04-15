@@ -650,7 +650,7 @@ namespace WebsiteBanXeMay.Controllers
                 Email = taiKhoan.Email
             };
 
-            return View(model);
+            return View("SuaThongTin", model);  
         }
 
         [HttpPost]
@@ -700,7 +700,7 @@ namespace WebsiteBanXeMay.Controllers
             {
                 _logger.LogError(ex, "💥 Lỗi SuaThongTinCaNhan - ID: {Id}", model.MaTaiKhoan);
                 ModelState.AddModelError("", "❌ Có lỗi xảy ra, vui lòng thử lại!");
-                return View(model);
+                return View("SuaThongTin", model);
             }
         }
 

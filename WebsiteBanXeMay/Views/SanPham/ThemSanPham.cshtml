@@ -8,7 +8,7 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-10">
-        <div class="card shadow-xl border-0">
+        <div class="card shadow-xl border-0 dark-card">
             <div class="card-header bg-gradient-@(isEdit ? "info" : "success") text-white py-4">
                 <div class="d-flex align-items-center">
                     <div class="bg-white bg-opacity-20 rounded-circle p-3 me-3 shadow-sm">
@@ -149,6 +149,16 @@
             </div>
         </div>
     </div>
+    <style>
+        .dark-card * {
+            color: #000000 !important;
+        }
+
+        .dark-card {
+            background: #ffffff !important;
+            border: 1px solid #000000 !important;
+        }
+    </style>
 </div>
 
 @section Scripts {

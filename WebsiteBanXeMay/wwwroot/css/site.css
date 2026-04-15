@@ -354,3 +354,71 @@ main {
                 color: white !important;
             }
 }
+/* 🔥 ULTIMATE FIX - DROPDOWN CHỮ ĐEN 100% */
+.dropdown-menu {
+    background: #ffffff !important;
+    color: #212529 !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.dropdown-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    color: #212529 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+    .dropdown-header h6,
+    .dropdown-header small {
+        color: #212529 !important;
+    }
+
+.dropdown-item {
+    color: #212529 !important;
+    padding: 12px 20px !important;
+}
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa !important;
+        color: #000 !important;
+    }
+
+/* Fix tên đăng nhập & ID */
+.dropdown-header small {
+    color: #6c757d !important;
+    font-weight: 500 !important;
+}
+
+/* Logout button */
+.hover-logout {
+    color: #dc3545 !important;
+    transition: all 0.2s ease;
+}
+
+    .hover-logout:hover {
+        background-color: #f8d7da !important;
+        color: #c82333 !important;
+        transform: translateX(5px);
+    }
+
+/* Mobile dropdown - GIỮ MÀU XANH */
+@media (max-width: 991px) {
+    .dropdown-menu {
+        background: rgba(13, 110, 253, 0.98) !important;
+        color: rgba(255,255,255,0.95) !important;
+    }
+
+    .dropdown-header {
+        background: rgba(255,255,255,0.1) !important;
+        color: white !important;
+        backdrop-filter: blur(10px);
+    }
+
+    .dropdown-item {
+        color: rgba(255,255,255,0.95) !important;
+    }
+
+        .dropdown-item:hover {
+            background: rgba(255,255,255,0.2) !important;
+            color: white !important;
+        }
+}

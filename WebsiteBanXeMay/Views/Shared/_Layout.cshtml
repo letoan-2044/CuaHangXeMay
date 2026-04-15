@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="user-info d-none d-lg-block me-2 text-truncate" style="max-width: 140px;">
                                     <div class="fw-bold small">@hoTen</div>
-                                    <small class="opacity-75">@chucVu</small>
+                                    <small class="text-dark fw-medium">@chucVu</small>
                                 </div>
                             </a>
 
@@ -151,7 +151,7 @@
                             <ul class="dropdown-menu dropdown-menu-end shadow-xl border-0 mt-2 animate__animated animate__fadeIn"
                                 style="min-width: 320px; border-radius: 16px;" aria-labelledby="userDropdown">
                                 <!-- TOÀN BỘ DROPDOWN MENU GIỮ NGUYÊN NHƯ CODE CŨ -->
-                                <li class="dropdown-header p-4 bg-gradient-primary text-white border-bottom rounded-top-3 position-relative">
+                                <li class="dropdown-header p-4 bg-light border-bottom rounded-top-3 position-relative text-dark">
                                     <div class="d-flex align-items-center">
                                         <div class="user-avatar-large bg-white bg-opacity-20 rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
                                              style="width: 60px; height: 60px;">
@@ -173,7 +173,7 @@
                                             <small>@Context.Session.GetString("TenDangNhap")</small>
                                         </div>
                                     </div>
-                                    <small class="opacity-75 mt-2 d-block">
+                                    <small class="text-dark mt-2 d-block fw-medium">
                                         #@Context.Session.GetInt32("MaTaiKhoan")
                                     </small>
                                 </li>
@@ -190,25 +190,25 @@
                                 @if (chucVu == "Khách hàng")
                                 {
                                     <li><hr class="dropdown-divider mx-3 opacity-50"></li>
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="GioHang"><i class="fas fa-shopping-cart me-3 text-success fs-5 opacity-80"></i>Giỏ hàng của tôi</a></li>
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="Index"><i class="fas fa-box me-3 text-info fs-5 opacity-80"></i>Lịch sử đơn hàng</a></li>
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="GioHang"><i class="fas fa-shopping-cart me-3 text-success fs-5 opacity-80"></i>Giỏ hàng của tôi</a></li>
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="Index"><i class="fas fa-box me-3 text-info fs-5 opacity-80"></i>Lịch sử đơn hàng</a></li>
                                 }
                                 @if (chucVu == "Admin")
                                 {
                                     <li><hr class="dropdown-divider mx-3 opacity-50"></li>
                                     <li class="dropdown-header px-4 py-3 bg-gradient-danger text-white border-bottom"><i class="fas fa-crown text-warning me-2"></i><strong>🔥 QUẢN TRỊ VIÊN</strong></li>
-                                    
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham"><i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm</a></li>
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="QuanLyTaiKhoan"><i class="fas fa-users me-3 text-info fs-5 opacity-80"></i>Quản lý tài khoản</a></li>
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang"><i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng</a></li>
+
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham"><i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm</a></li>
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="TaiKhoan" asp-action="QuanLyTaiKhoan"><i class="fas fa-users me-3 text-info fs-5 opacity-80"></i>Quản lý tài khoản</a></li>
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang"><i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng</a></li>
                                 }
                                 else if (chucVu == "Nhân viên")
                                 {
                                     <li><hr class="dropdown-divider mx-3 opacity-50"></li>
                                     <li class="dropdown-header px-4 py-3 bg-gradient-info text-white border-bottom"><i class="fas fa-user-tie text-primary me-2"></i><strong>⚙️ NHÂN VIÊN</strong></li>
-                               
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham"><i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm</a></li>
-                                    <li><a class="dropdown-item py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang"><i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng</a></li>
+
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="SanPham" asp-action="QuanLySanPham"><i class="fas fa-boxes me-3 text-primary fs-5 opacity-80"></i>Quản lý sản phẩm</a></li>
+                                    <li><a class="dropdown-item text-dark py-3 px-4 fw-medium" asp-controller="DonHang" asp-action="QuanLyDonHang"><i class="fas fa-shopping-bag me-3 text-success fs-5 opacity-80"></i>Quản lý đơn hàng</a></li>
                                 }
                                 <li><hr class="dropdown-divider mx-3 opacity-50"></li>
                                 <li>
