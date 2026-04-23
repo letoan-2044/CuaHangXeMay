@@ -463,13 +463,76 @@ namespace WebsiteBanXeMay.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> XoaTaiKhoan(int maTaiKhoan)
         {
-            var taiKhoan = await _context.TaiKhoans.FindAsync(maTaiKhoan);
-            if (taiKhoan == null) return Json(new { success = false });
+            var stopwatch = Stopwatch.StartNew();
+            _logger.LogInformation("🗑️ Bắt đầu xóa tài khoản ID: {MaTaiKhoan}", maTaiKhoan);
 
-            _context.TaiKhoans.Remove(taiKhoan);
-            await _context.SaveChangesAsync();
+            try
+            {
+                using var transaction = await _context.Database.BeginTransactionAsync();
 
-            return Json(new { success = true });
+                // 🔥 XÓA TẤT CẢ DỮ LIỆU LIÊN QUAN
+                #region Xóa ChiTietDonHang
+                var chiTietDonHangs = await _context.ChiTietDonHangs
+                    .Where(ct => ct.DonHang.MaTaiKhoan == maTaiKhoan)
+                    .ToListAsync();
+                _context.ChiTietDonHangs.RemoveRange(chiTietDonHangs);
+                #endregion
+
+                #region Xóa DonHang
+                var donHangs = await _context.DonHangs
+                    .Where(d => d.MaTaiKhoan == maTaiKhoan)
+                    .ToListAsync();
+                _context.DonHangs.RemoveRange(donHangs);
+                #endregion
+
+                #region Xóa ChiTietGioHang
+                var chiTietGioHangs = await _context.ChiTietGioHangs
+                    .Where(ct => ct.GioHang.MaTaiKhoan == maTaiKhoan)
+                    .ToListAsync();
+                _context.ChiTietGioHangs.RemoveRange(chiTietGioHangs);
+                #endregion
+
+                #region Xóa GioHang
+                var gioHangs = await _context.GioHangs
+                    .Where(g => g.MaTaiKhoan == maTaiKhoan)
+                    .ToListAsync();
+                _context.GioHangs.RemoveRange(gioHangs);
+                #endregion
+
+                #region Xóa TaiKhoan
+                var taiKhoan = await _context.TaiKhoans.FindAsync(maTaiKhoan);
+                if (taiKhoan == null)
+                {
+                    await transaction.RollbackAsync();
+                    return Json(new { success = false, message = "Không tìm thấy tài khoản!" });
+                }
+                _context.TaiKhoans.Remove(taiKhoan);
+                #endregion
+
+                // 🔥 SAVE ALL
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                stopwatch.Stop();
+                _logger.LogInformation("✅ XÓA HOÀN TOÀN - ID: {MaTaiKhoan} ({ElapsedMs}ms)",
+                    maTaiKhoan, stopwatch.ElapsedMilliseconds);
+
+                return Json(new
+                {
+                    success = true,
+                    message = "Xóa tài khoản và tất cả dữ liệu liên quan thành công!",
+                    reload = true
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "💥 LỖI XÓA TÀI KHOẢN {MaTaiKhoan}", maTaiKhoan);
+                return Json(new
+                {
+                    success = false,
+                    message = "Lỗi hệ thống: " + ex.Message
+                });
+            }
         }
         [HttpGet]
         public async Task<IActionResult> ThongTin(int id)
