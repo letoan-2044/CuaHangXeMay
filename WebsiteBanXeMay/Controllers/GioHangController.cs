@@ -68,7 +68,7 @@ namespace WebsiteBanXeMay.Controllers
                 ? userId : null;
         }
 
-        // 🔥 FIX: Đổi tên TẤT CẢ thành cartGioHang
+       
         public async Task<IActionResult> Index()
         {
             SetUserInfo();
