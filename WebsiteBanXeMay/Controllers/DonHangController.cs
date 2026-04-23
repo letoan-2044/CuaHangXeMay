@@ -14,13 +14,13 @@ namespace WebsiteBanXeMay.Controllers
             _context = context;
         }
 
-        // 🔥 LỊCH SỬ KHÁCH HÀNG - ✅ HOÀN TOÀN AN TOÀN
+        //  LỊCH SỬ KHÁCH HÀNG
         public async Task<IActionResult> Index(string trangThai = "", int trang = 1)
         {
             var maTK = HttpContext.Session.GetInt32("MaTaiKhoan");
             if (!maTK.HasValue || maTK == 0)
             {
-                // 🔥 FIX 2: Lưu URL (tùy chọn)
+                //  FIX 2: Lưu URL (tùy chọn)
                 HttpContext.Session.SetString("RedirectUrl", $"/DonHang?trangThai={trangThai}&trang={trang}");
                 return RedirectToAction("DangNhap", "TaiKhoan");
             }
@@ -48,7 +48,7 @@ namespace WebsiteBanXeMay.Controllers
             return View(donHangs);
         }
 
-        // 🔥 QUẢN LÝ - ✅ HOÀN TOÀN AN TOÀN
+        //  QUẢN LÝ 
         public async Task<IActionResult> QuanLyDonHang(string trangThai = "", string tuKhoa = "", int trang = 1)
         {
             var chucVu = HttpContext.Session.GetString("ChucVu");
@@ -87,7 +87,7 @@ namespace WebsiteBanXeMay.Controllers
             return View(donHangs);
         }
 
-        // 🔥 CHI TIẾT - ✅ HOÀN TOÀN AN TOÀN
+        //  CHI TIẾT
         public async Task<IActionResult> ChiTiet(int id)
         {
             // Lay don hang theo MaDonHang
@@ -118,7 +118,7 @@ namespace WebsiteBanXeMay.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] // ✅ Giữ lại
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> CapNhatTrangThai(int maDonHang, string trangThaiMoi)
         {
             // 🔥 DEBUG: Log giá trị nhận được
