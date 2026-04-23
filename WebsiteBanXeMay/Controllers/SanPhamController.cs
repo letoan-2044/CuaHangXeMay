@@ -14,7 +14,7 @@ namespace WebsiteBanXeMay.Controllers
             _context = context;
         }
 
-        // 🔥 TÌM KIẾM + LỌC HÃNG XE + PHÂN TRANG ✅ KHÔNG CẦN THAY ĐỔI DB
+        //  TÌM KIẾM + LỌC HÃNG XE + PHÂN TRANG 
         public async Task<IActionResult> Index(string tuKhoa, string hangXe, int page = 1)
         {
             int pageSize = 12;
@@ -26,7 +26,7 @@ namespace WebsiteBanXeMay.Controllers
                 .AsQueryable();
 
 
-            // 🔥 TÌM KIẾM THEO TỪ KHÓA (tên + mô tả)
+            //  TÌM KIẾM THEO TỪ KHÓA 
             if (!string.IsNullOrWhiteSpace(tuKhoa))
             {
                 tuKhoa = tuKhoa.Trim().ToLower();
@@ -35,14 +35,14 @@ namespace WebsiteBanXeMay.Controllers
                     s.MoTa.ToLower().Contains(tuKhoa));
             }
 
-            // 🔥 LỌC HÃNG XE (dựa vào tên sản phẩm - KHÔNG CẦN TRƯỜNG HangXe)
+            //  LỌC HÃNG XE 
             if (!string.IsNullOrWhiteSpace(hangXe))
             {
                 var upperHangXe = hangXe.Trim().ToUpper();
                 query = query.Where(s => s.TenSanPham.ToUpper().Contains(upperHangXe));
             }
 
-            // 🔥 PHÂN TRANG
+            //  PHÂN TRANG
             var totalItems = await query.CountAsync();
             var sanPhams = await query
                 .OrderByDescending(s => s.Gia)
@@ -50,7 +50,7 @@ namespace WebsiteBanXeMay.Controllers
                 .Take(pageSize)
                 .ToListAsync();
 
-            // 🔥 VIEWBAG CHO LAYOUT DROPDOWN (KHÔNG LỖI RAZOR)
+           
             ViewBag.TuKhoa = tuKhoa;
             ViewBag.SelectedHangXe = hangXe;
             ViewBag.CurrentPage = page;
@@ -61,7 +61,7 @@ namespace WebsiteBanXeMay.Controllers
             return View(sanPhams);
         }
 
-        // 🔥 GỢI Ý TÌM KIẾM (AJAX)
+        //  GỢI Ý TÌM KIẾM 
         [HttpGet]
         public async Task<IActionResult> GetSearchSuggestions(string tuKhoa)
         {
@@ -80,7 +80,7 @@ namespace WebsiteBanXeMay.Controllers
             return Json(suggestions);
         }
 
-        // 🔥 CHI TIẾT SẢN PHẨM
+        //  CHI TIẾT SẢN PHẨM
         public async Task<IActionResult> Details(int? id)
         {
             var sanPham = await _context.SanPhams
@@ -97,13 +97,13 @@ namespace WebsiteBanXeMay.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToCart(int maSanPham, string tuKhoa = "", string hangXe = "", int page = 1)
         {
-            // 🔥 SYNC USER TRƯỚC
+            //  SYNC USER TRƯỚC
             SetUserInfo();
 
-            // 🔥 LẤY MA TÀI KHOẢN AN TOÀN
+            //  LẤY MA TÀI KHOẢN AN TOÀN
             int maTaiKhoan = HttpContext.Session.GetInt32("MaTaiKhoan") ?? 0;
 
-            // 🔥 BACKUP IDENTITY
+            //  BACKUP IDENTITY
             if (maTaiKhoan == 0 && User.Identity.IsAuthenticated)
             {
                 var identityName = User.Identity.Name;

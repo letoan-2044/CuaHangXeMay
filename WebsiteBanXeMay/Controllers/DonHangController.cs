@@ -14,18 +14,18 @@ namespace WebsiteBanXeMay.Controllers
             _context = context;
         }
 
-        // 🔥 LỊCH SỬ KHÁCH HÀNG - ✅ HOÀN TOÀN AN TOÀN
+        //  LỊCH SỬ KHÁCH HÀNG
         public async Task<IActionResult> Index(string trangThai = "", int trang = 1)
         {
             var maTK = HttpContext.Session.GetInt32("MaTaiKhoan");
             if (!maTK.HasValue || maTK == 0)
             {
-                // 🔥 FIX 2: Lưu URL (tùy chọn)
+                //  FIX 2: Lưu URL (tùy chọn)
                 HttpContext.Session.SetString("RedirectUrl", $"/DonHang?trangThai={trangThai}&trang={trang}");
                 return RedirectToAction("DangNhap", "TaiKhoan");
             }
 
-            // ✅ Cách an toàn nhất - Include từng bước
+            //  Include từng bước
             var query = _context.DonHangs
                 .Where(d => d.MaTaiKhoan == maTK);
 
@@ -48,7 +48,7 @@ namespace WebsiteBanXeMay.Controllers
             return View(donHangs);
         }
 
-        // 🔥 QUẢN LÝ - ✅ HOÀN TOÀN AN TOÀN
+        //  QUẢN LÝ 
         public async Task<IActionResult> QuanLyDonHang(string trangThai = "", string tuKhoa = "", int trang = 1)
         {
             var chucVu = HttpContext.Session.GetString("ChucVu");
@@ -87,7 +87,7 @@ namespace WebsiteBanXeMay.Controllers
             return View(donHangs);
         }
 
-        // 🔥 CHI TIẾT - ✅ HOÀN TOÀN AN TOÀN
+        //  CHI TIẾT
         public async Task<IActionResult> ChiTiet(int id)
         {
             // Lay don hang theo MaDonHang
@@ -118,7 +118,7 @@ namespace WebsiteBanXeMay.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] // ✅ Giữ lại
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> CapNhatTrangThai(int maDonHang, string trangThaiMoi)
         {
             // 🔥 DEBUG: Log giá trị nhận được
@@ -171,7 +171,7 @@ namespace WebsiteBanXeMay.Controllers
             };
             return Json(stats);
         }
-        // 🔥 THÊM VÀO DonHangController.cs
+       
         [HttpGet]
         [HttpGet]
         public async Task<IActionResult> ThongKeDonHang()
@@ -196,7 +196,7 @@ namespace WebsiteBanXeMay.Controllers
                 .OrderByDescending(d => d.NgayDat)
                 .ToListAsync();
 
-            // 🔥 DOANH THU: CHỈ TÍNH ĐƠN KHÔNG HỦY
+            //  DOANH THU: CHỈ TÍNH ĐƠN KHÔNG HỦY
             var doanhThu = orders
                 .Where(d => d.TrangThai != "Hủy")
                 .Sum(d => d.TongTien ?? 0);
@@ -204,7 +204,7 @@ namespace WebsiteBanXeMay.Controllers
             var stats = new
             {
                 totalOrders = orders.Count,
-                totalRevenue = doanhThu,  // ✅ ĐÚNG
+                totalRevenue = doanhThu, 
                 statusCount = orders.GroupBy(d => d.TrangThai)
                     .ToDictionary(g => g.Key ?? "Không xác định", g => g.Count()),
                 orders = orders.Select(o => new
