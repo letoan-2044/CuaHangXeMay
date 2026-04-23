@@ -459,18 +459,31 @@ namespace WebsiteBanXeMay.Controllers
             return Json(new { success = true });
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> XoaTaiKhoan(int maTaiKhoan)
+        // THÊM VÀO TaiKhoanController.cs
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> XoaTaiKhoan(int[] ids)
+{
+    if (HttpContext.Session.GetInt32("MaChucVu") > 2)
+        return Json(new { ok = false, msg = "❌ Không có quyền" });
+
+    try
+    {
+        var success = 0;
+        foreach (var id in ids ?? new int[0])
         {
-            var taiKhoan = await _context.TaiKhoans.FindAsync(maTaiKhoan);
-            if (taiKhoan == null) return Json(new { success = false });
-
-            _context.TaiKhoans.Remove(taiKhoan);
-            await _context.SaveChangesAsync();
-
-            return Json(new { success = true });
+            var user = await _context.TaiKhoans.FindAsync(id);
+            if (user != null && user.MaChucVu > 2)
+            {
+                user.TrangThai = false;
+                await _context.SaveChangesAsync();
+                success++;
+            }
         }
+        return Json(new { ok = true, msg = $"✅ Xóa {success} tk" });
+    }
+    catch { return Json(new { ok = false, msg = "❌ Lỗi" }); }
+}
         [HttpGet]
         public async Task<IActionResult> ThongTin(int id)
         {
