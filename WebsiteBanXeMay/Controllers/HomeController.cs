@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace WebsiteBanXeMay.Controllers
 {
-    public class HomeController : Controller  // ✅ Kế thừa Controller
+    public class HomeController : Controller  
     {
         private readonly AppDbContext _context;
         private readonly ILogger<HomeController> _logger;
 
-        // ✅ Constructor Dependency Injection
+       
         public HomeController(AppDbContext context, ILogger<HomeController> logger)
         {
             _context = context;
