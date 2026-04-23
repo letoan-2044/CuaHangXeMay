@@ -171,7 +171,7 @@ namespace WebsiteBanXeMay.Controllers
             };
             return Json(stats);
         }
-        // 🔥 THÊM VÀO DonHangController.cs
+       
         [HttpGet]
         [HttpGet]
         public async Task<IActionResult> ThongKeDonHang()
@@ -196,7 +196,7 @@ namespace WebsiteBanXeMay.Controllers
                 .OrderByDescending(d => d.NgayDat)
                 .ToListAsync();
 
-            // 🔥 DOANH THU: CHỈ TÍNH ĐƠN KHÔNG HỦY
+            //  DOANH THU: CHỈ TÍNH ĐƠN KHÔNG HỦY
             var doanhThu = orders
                 .Where(d => d.TrangThai != "Hủy")
                 .Sum(d => d.TongTien ?? 0);
@@ -204,7 +204,7 @@ namespace WebsiteBanXeMay.Controllers
             var stats = new
             {
                 totalOrders = orders.Count,
-                totalRevenue = doanhThu,  // ✅ ĐÚNG
+                totalRevenue = doanhThu, 
                 statusCount = orders.GroupBy(d => d.TrangThai)
                     .ToDictionary(g => g.Key ?? "Không xác định", g => g.Count()),
                 orders = orders.Select(o => new
